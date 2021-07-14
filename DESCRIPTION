@@ -31,6 +31,6 @@ Imports:
     tidyverse,
     pROC,
     ROCnReg
-Depends: 
     tidyverse
+Depends: 
 Remotes: jpshanno/ecoflux
