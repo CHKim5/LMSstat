@@ -6,6 +6,7 @@
 #' @param color colors used for ggplots.
 #' @param order order of the groups; order = c("A","B","C")
 #' @param tip_length significance tip length
+#' @param legend_position legend position "none","left","right","bottom","top"
 #' @param label_size significance label size
 #' @param step_increase significance step increase
 #' @param width bar width

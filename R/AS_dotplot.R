@@ -5,6 +5,7 @@
 #' @param significant_variable_only show significant variable only (T,F)
 #' @param color colors used for ggplots.
 #' @param order order of the groups; order = c("A","B","C")
+#' @param legend_position legend position "none","left","right","bottom","top"
 #' @param tip_length significance tip length
 #' @param label_size significance label size
 #' @param step_increase significance step increase
