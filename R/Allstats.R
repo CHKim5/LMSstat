@@ -20,7 +20,7 @@ Allstats<-function (Data, Adjust_p_value = T, Adjust_method = "BH")
   LETTERS37232 <- LETTERS37232[-365]
   colnames(Data) <- Data[1, ]
   Data <- Data[-1, -2]
-  Data<-Data %>% arrange(Group)
+  Data<-Data %>% dplyr::arrange(Group)
   Data_renamed <- Data
   nmet <- ncol(Data) - 2
   colnames(Data_renamed) <- c(colnames(Data[1:2]), LETTERS37232[1:nmet])
@@ -32,7 +32,7 @@ Allstats<-function (Data, Adjust_p_value = T, Adjust_method = "BH")
     suppressWarnings({
       for (Gnum in 1:length(unique(Data$Group))) {
         assign(paste("Data", unique(Data$Group)[Gnum],
-                     sep = "_"), filter(Data_final, Group ==
+                     sep = "_"), dplyr::filter(Data_final, Group ==
                                           unique(Data_final$Group)[Gnum]))
       }
       Result <- matrix(data = NA, nrow = (ncol(Data_final) -
