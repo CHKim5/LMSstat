@@ -95,8 +95,9 @@ AS_barplot<-function(data,
         ggpubr::ggbarplot(df,
                           x = "Group",
                           y ="len",
-                          fill =ckey,
-                          color = "#e9ecef",
+                          color = ckey,
+                          fill ="Group",
+                          palette = ckey,
                           order = order,
                           width = width) +
           ggplot2::geom_errorbar( ggplot2::aes(x=Group, ymin=len-SEM, ymax=len+SEM), width=0.2, colour="Black", alpha=1, size=0.5)+
@@ -132,8 +133,9 @@ AS_barplot<-function(data,
       else if(significant_variable_only == F) {
         ggpubr::ggbarplot(df,x = "Group",
                           y ="len",
-                          fill =ckey,
-                          color = "#e9ecef",
+                          color = ckey,
+                          fill ="Group",
+                          palette = ckey,
                           order = order,
                           width = width) +
           ggplot2::geom_errorbar( ggplot2::aes(x=Group, ymin=len-SEM, ymax=len+SEM), width=0.2, colour="Black", alpha=1, size=0.5)+
@@ -212,8 +214,9 @@ AS_barplot<-function(data,
           ggpubr::ggbarplot(df,
                             x = "Group",
                             y ="len",
-                            fill =ckey,
-                            color = "#e9ecef",
+                            color = ckey,
+                            fill ="Group",
+                            palette = ckey,
                             order = order,
                             width = width) +
             ggplot2::geom_errorbar( ggplot2::aes(x=Group, ymin=len-SEM, ymax=len+SEM), width=0.2, colour="Black", alpha=1, size=0.5)+
@@ -250,8 +253,9 @@ AS_barplot<-function(data,
           ggpubr::ggbarplot(df,
                             x = "Group",
                             y ="len",
-                            fill =ckey,
-                            color = "#e9ecef",
+                            color = ckey,
+                            fill ="Group",
+                            palette = ckey,
                             order = order,
                             width = width) +
             ggplot2::geom_errorbar( ggplot2::aes(x=Group, ymin=len-SEM, ymax=len+SEM), width=0.2, colour="Black", alpha=1, size=0.5)+
