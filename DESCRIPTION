@@ -1,0 +1,36 @@
+Package: LMSstat
+Title: AUTOMATION OF STATISTICAL TESTS WITH AN IDENTICAL DATA INPUT.
+Version: 1.0.3
+Authors@R: 
+    person(given = "CHANG-HO",
+           family = "KIM",
+           role = c("aut", "cre"),
+           email = "demizor3@gmail.com")
+Description: Automation of statistical tests with an identical data input. 
+  The package Includes most Statistical tests used in metabolomics,
+  aiming to reduce arduous work searching for packages and changing data input.
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+License: MIT + file LICENSE
+biocViews:
+Imports: 
+    DescTools,
+    FSA,
+    viridis,
+    gtools,
+    ggplot2,
+    scales,
+    ggpubr,
+    mixOmics,
+    ecoflux,
+    vegan,
+    plyr,
+    dplyr,
+    tidyverse,
+    pROC,
+    ROCnReg
+Depends: 
+    tidyverse
+Remotes: jpshanno/ecoflux
