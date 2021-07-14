@@ -99,20 +99,20 @@ AS_boxplot<-function(data,
                           width = width)+
           ggplot2::scale_y_continuous(label=ecoflux::scientific_10x)+
           ggplot2::labs(title=NAMES[number],x =NULL, y = "Intensity")+
-          ggplot2::theme_classic()+ ggplot2::theme(plot.title=element_text(size=15,
+          ggplot2::theme_classic()+ ggplot2::theme(plot.title=ggplot2::element_text(size=15,
                                                          face="bold",
                                                          color="Black",
                                                          hjust=0.5,
                                                          lineheight=1.2),  # title
-                                 plot.subtitle=element_text(size=15,
+                                 plot.subtitle=ggplot2::element_text(size=15,
                                                             hjust=0.5),  # subtitle
-                                 plot.caption=element_text(size=15),  # caption
-                                 axis.title.x=element_text(vjust=10,
+                                 plot.caption=ggplot2::element_text(size=15),  # caption
+                                 axis.title.x=ggplot2::element_text(vjust=10,
                                                            size=15),  # X axis title
-                                 axis.title.y=element_text(size=12),  # Y axis title
-                                 axis.text.x=element_text(size=10,
+                                 axis.title.y=ggplot2::element_text(size=12),  # Y axis title
+                                 axis.text.x=ggplot2::element_text(size=10,
                                                           vjust=.5),  # X axis text
-                                 axis.text.y=element_text(size=10),
+                                 axis.text.y=ggplot2::element_text(size=10),
                                  legend.position = legend_position)+
           ggpubr::stat_pvalue_manual(stat.test,
                                      y.position = 1.05 * max(data[["Data_renamed"]][,number]),
@@ -137,20 +137,20 @@ AS_boxplot<-function(data,
                           width = width)+
           ggplot2::scale_y_continuous(label=ecoflux::scientific_10x)+
           ggplot2::labs(title=NAMES[number],x =NULL, y = "Intensity")+
-          ggplot2::theme_classic()+ ggplot2::theme(plot.title=element_text(size=15,
+          ggplot2::theme_classic()+ ggplot2::theme(plot.title=ggplot2::element_text(size=15,
                                                                            face="bold",
                                                                            color="Black",
                                                                            hjust=0.5,
                                                                            lineheight=1.2),  # title
-                                                   plot.subtitle=element_text(size=15,
+                                                   plot.subtitle=ggplot2::element_text(size=15,
                                                                               hjust=0.5),  # subtitle
-                                                   plot.caption=element_text(size=15),  # caption
-                                                   axis.title.x=element_text(vjust=10,
+                                                   plot.caption=ggplot2::element_text(size=15),  # caption
+                                                   axis.title.x=ggplot2::element_text(vjust=10,
                                                                              size=15),  # X axis title
-                                                   axis.title.y=element_text(size=12),  # Y axis title
-                                                   axis.text.x=element_text(size=10,
+                                                   axis.title.y=ggplot2::element_text(size=12),  # Y axis title
+                                                   axis.text.x=ggplot2::element_text(size=10,
                                                                             vjust=.5),  # X axis text
-                                          axis.text.y=element_text(size=10),
+                                          axis.text.y=ggplot2::element_text(size=10),
                                           legend.position = legend_position)
 
         ggplot2::ggsave(filename = paste(NAMES[number],"boxplot.png",collapse = ""),
@@ -216,20 +216,20 @@ AS_boxplot<-function(data,
                             width = width)+
             ggplot2::scale_y_continuous(label=ecoflux::scientific_10x)+
             ggplot2::labs(title=NAMES[number],x =NULL, y = "Intensity")+
-            ggplot2::theme_classic()+ ggplot2::theme(plot.title=element_text(size=15,
+            ggplot2::theme_classic()+ ggplot2::theme(plot.title=ggplot2::element_text(size=15,
                                                                     face="bold",
                                                                     color="Black",
                                                                     hjust=0.5,
                                                                     lineheight=1.2),  # title
-                                            plot.subtitle=element_text(size=15,
+                                            plot.subtitle=ggplot2::element_text(size=15,
                                                                        hjust=0.5),  # subtitle
-                                            plot.caption=element_text(size=15),  # caption
-                                            axis.title.x=element_text(vjust=10,
+                                            plot.caption=ggplot2::element_text(size=15),  # caption
+                                            axis.title.x=ggplot2::element_text(vjust=10,
                                                                       size=15),  # X axis title
-                                            axis.title.y=element_text(size=12),  # Y axis title
-                                            axis.text.x=element_text(size=10,
+                                            axis.title.y=ggplot2::element_text(size=12),  # Y axis title
+                                            axis.text.x=ggplot2::element_text(size=10,
                                                                      vjust=.5),  # X axis text
-                                            axis.text.y=element_text(size=10),
+                                            axis.text.y=ggplot2::element_text(size=10),
                                             legend.position = legend_position,
                                             step.increase = step_increase,
                                             label.size = label_size,
@@ -250,20 +250,20 @@ AS_boxplot<-function(data,
                             width = width)+
             ggplot2::scale_y_continuous(label=ecoflux::scientific_10x)+
             ggplot2::labs(title=NAMES[number],x =NULL, y = "Intensity")+
-            ggplot2::theme_classic()+ ggplot2::theme(plot.title=element_text(size=15,
+            ggplot2::theme_classic()+ ggplot2::theme(plot.title=ggplot2::element_text(size=15,
                                                            face="bold",
                                                            color="Black",
                                                            hjust=0.5,
                                                            lineheight=1.2),  # title
-                                   plot.subtitle=element_text(size=15,
+                                   plot.subtitle=ggplot2::element_text(size=15,
                                                               hjust=0.5),  # subtitle
-                                   plot.caption=element_text(size=15),  # caption
-                                   axis.title.x=element_text(vjust=10,
+                                   plot.caption=ggplot2::element_text(size=15),  # caption
+                                   axis.title.x=ggplot2::element_text(vjust=10,
                                                              size=15),  # X axis title
-                                   axis.title.y=element_text(size=12),  # Y axis title
-                                   axis.text.x=element_text(size=10,
+                                   axis.title.y=ggplot2::element_text(size=12),  # Y axis title
+                                   axis.text.x=ggplot2::element_text(size=10,
                                                             vjust=.5),  # X axis text
-                                   axis.text.y=element_text(size=10),
+                                   axis.text.y=ggplot2::element_text(size=10),
                                    legend.position = legend_position)
 
           ggplot2::ggsave(filename = paste(NAMES[number],"boxplot.png",collapse = ""),
