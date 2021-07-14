@@ -97,9 +97,9 @@ AS_dotplot<-function(data,
                              size = size)+
           stat_summary(fun.y = median, fun.ymin = median, fun.ymax = median,
                        geom = "crossbar", width = 0.4,color="Black",size=0.2)+
-          scale_y_continuous(label=ecoflux::scientific_10x)+
-          labs(title=NAMES[number],x =NULL, y = "Intensity")+
-          theme_classic()+ ggplot2::theme(plot.title=element_text(size=15,
+          ggplot2::scale_y_continuous(label=ecoflux::scientific_10x)+
+          ggplot2::labs(title=NAMES[number],x =NULL, y = "Intensity")+
+          ggplot2::theme_classic()+ ggplot2::theme(plot.title=element_text(size=15,
                                                          face="bold",
                                                          color="Black",
                                                          hjust=0.5,
@@ -122,7 +122,7 @@ AS_dotplot<-function(data,
                                      label = "p.adj.signif",
                                      size = 3.5,
                                      vjust = 0.05)
-        ggsave(filename = paste(NAMES[number],"dotplot.png",collapse = ""),
+        ggplot2::ggsave(filename = paste(NAMES[number],"dotplot.png",collapse = ""),
                path=paste0(getwd(),"/dotplot"),
                width = fig_width,
                height = fig_height)}
@@ -136,9 +136,9 @@ AS_dotplot<-function(data,
                              size = size)+
           stat_summary(fun.y = median, fun.ymin = median, fun.ymax = median,
                                 geom = "crossbar", width = 0.4,color="Black",size=0.2)+
-          scale_y_continuous(label=ecoflux::scientific_10x)+
-          labs(title=NAMES[number],x =NULL, y = "Intensity")+
-          theme_classic()+ theme(plot.title=element_text(size=15,
+          ggplot2::scale_y_continuous(label=ecoflux::scientific_10x)+
+          ggplot2::labs(title=NAMES[number],x =NULL, y = "Intensity")+
+          ggplot2::theme_classic()+ ggplot2::theme(plot.title=element_text(size=15,
                                                                            face="bold",
                                                                            color="Black",
                                                                            hjust=0.5,
@@ -154,7 +154,7 @@ AS_dotplot<-function(data,
                                                    axis.text.y=element_text(size=10),
                                  legend.position = legend_position)
 
-        ggsave(filename = paste(NAMES[number],"dotplot.png",collapse = ""),
+        ggplot2::ggsave(filename = paste(NAMES[number],"dotplot.png",collapse = ""),
                path=paste0(getwd(),"/dotplot"),
                width = fig_width,
                height = fig_height)}}}
@@ -215,9 +215,9 @@ AS_dotplot<-function(data,
                                size = size)+
             stat_summary(fun.y = median, fun.ymin = median, fun.ymax = median,
                          geom = "crossbar", width = 0.4,color="Black",size=0.2)+
-            scale_y_continuous(label=ecoflux::scientific_10x)+
-            labs(title=NAMES[number],x =NULL, y = "Intensity")+
-            theme_classic()+ ggplot2::theme(plot.title=element_text(size=15,
+            ggplot2::scale_y_continuous(label=ecoflux::scientific_10x)+
+            ggplot2::labs(title=NAMES[number],x =NULL, y = "Intensity")+
+            ggplot2::theme_classic()+ ggplot2::theme(plot.title=element_text(size=15,
                                                                     face="bold",
                                                                     color="Black",
                                                                     hjust=0.5,
@@ -240,7 +240,7 @@ AS_dotplot<-function(data,
                                        label = "p.adj.signif",
                                        size = 3.5,
                                        vjust = 0.05)
-          ggsave(filename = paste(NAMES[number],"dotplot.png",collapse = ""),
+          ggplot2::ggsave(filename = paste(NAMES[number],"dotplot.png",collapse = ""),
                  path=paste0(getwd(),"/dotplot"),
                  width = fig_width,
                  height = fig_height)}
@@ -254,9 +254,9 @@ AS_dotplot<-function(data,
                                size = size)+
             stat_summary(fun.y = median, fun.ymin = median, fun.ymax = median,
                          geom = "crossbar", width = 0.4,color="Black",size=0.2)+
-            scale_y_continuous(label=ecoflux::scientific_10x)+
-            labs(title=NAMES[number],x =NULL, y = "Intensity")+
-            theme_classic()+ ggplot2::theme(plot.title=element_text(size=15,
+            ggplot2::scale_y_continuous(label=ecoflux::scientific_10x)+
+            ggplot2::labs(title=NAMES[number],x =NULL, y = "Intensity")+
+            ggplot2::theme_classic()+ ggplot2::theme(plot.title=element_text(size=15,
                                                                     face="bold",
                                                                     color="Black",
                                                                     hjust=0.5,
@@ -271,7 +271,7 @@ AS_dotplot<-function(data,
                                                                      vjust=.5),  # X axis text
                                             axis.text.y=element_text(size=10),
                                             legend.position = legend_position)
-          ggsave(filename = paste(NAMES[number],"dotplot.png",collapse = ""),
+          ggplot2::ggsave(filename = paste(NAMES[number],"dotplot.png",collapse = ""),
                  path=paste0(getwd(),"/dotplot"),
                  width = fig_width,
                  height = fig_height)

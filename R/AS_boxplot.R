@@ -97,9 +97,9 @@ AS_boxplot<-function(data,
                           add = "jitter",
                           order = order,
                           width = width)+
-          scale_y_continuous(label=ecoflux::scientific_10x)+
-          labs(title=NAMES[number],x =NULL, y = "Intensity")+
-          theme_classic()+ ggplot2::theme(plot.title=element_text(size=15,
+          ggplot2::scale_y_continuous(label=ecoflux::scientific_10x)+
+          ggplot2::labs(title=NAMES[number],x =NULL, y = "Intensity")+
+          ggplot2::theme_classic()+ ggplot2::theme(plot.title=element_text(size=15,
                                                          face="bold",
                                                          color="Black",
                                                          hjust=0.5,
@@ -122,7 +122,7 @@ AS_boxplot<-function(data,
                                      label = "p.adj.signif",
                                      size = 3.5,
                                      vjust = 0.05)
-        ggsave(filename = paste(NAMES[number],"boxplot.png",collapse = ""),
+        ggplot2::ggsave(filename = paste(NAMES[number],"boxplot.png",collapse = ""),
                path=paste0(getwd(),"/boxplot"),
                width = fig_width,
                height = fig_height)}
@@ -135,9 +135,9 @@ AS_boxplot<-function(data,
                           add = "jitter",
                           order = order,
                           width = width)+
-          scale_y_continuous(label=ecoflux::scientific_10x)+
-          labs(title=NAMES[number],x =NULL, y = "Intensity")+
-          theme_classic()+ ggplot2::theme(plot.title=element_text(size=15,
+          ggplot2::scale_y_continuous(label=ecoflux::scientific_10x)+
+          ggplot2::labs(title=NAMES[number],x =NULL, y = "Intensity")+
+          ggplot2::theme_classic()+ ggplot2::theme(plot.title=element_text(size=15,
                                                                            face="bold",
                                                                            color="Black",
                                                                            hjust=0.5,
@@ -153,7 +153,7 @@ AS_boxplot<-function(data,
                                           axis.text.y=element_text(size=10),
                                           legend.position = legend_position)
 
-        ggsave(filename = paste(NAMES[number],"boxplot.png",collapse = ""),
+        ggplot2::ggsave(filename = paste(NAMES[number],"boxplot.png",collapse = ""),
                path=paste0(getwd(),"/boxplot"),
                width = fig_width,
                height = fig_height)}}}
@@ -214,9 +214,9 @@ AS_boxplot<-function(data,
                             add = "jitter",
                             order = order,
                             width = width)+
-            scale_y_continuous(label=ecoflux::scientific_10x)+
-            labs(title=NAMES[number],x =NULL, y = "Intensity")+
-            theme_classic()+ ggplot2::theme(plot.title=element_text(size=15,
+            ggplot2::scale_y_continuous(label=ecoflux::scientific_10x)+
+            ggplot2::labs(title=NAMES[number],x =NULL, y = "Intensity")+
+            ggplot2::theme_classic()+ ggplot2::theme(plot.title=element_text(size=15,
                                                                     face="bold",
                                                                     color="Black",
                                                                     hjust=0.5,
@@ -235,7 +235,7 @@ AS_boxplot<-function(data,
                                             label.size = label_size,
                                             tip.length = tip_length)+
             ggpubr::stat_pvalue_manual(stat.test, y.position = 1.05 * max(data[["Data_renamed"]][,number]), step.increase = 0.1,label = "p.adj.signif",size = 3.5,vjust = 0.05)
-          ggsave(filename = paste(NAMES[number],"boxplot.png",collapse = ""),
+          ggplot2::ggsave(filename = paste(NAMES[number],"boxplot.png",collapse = ""),
                  path=paste0(getwd(),"/boxplot"),
                  width = fig_width,
                  height = fig_height)}
@@ -248,9 +248,9 @@ AS_boxplot<-function(data,
                             add = "jitter",
                             order = order,
                             width = width)+
-            scale_y_continuous(label=ecoflux::scientific_10x)+
-            labs(title=NAMES[number],x =NULL, y = "Intensity")+
-            theme_classic()+ ggplot2::theme(plot.title=element_text(size=15,
+            ggplot2::scale_y_continuous(label=ecoflux::scientific_10x)+
+            ggplot2::labs(title=NAMES[number],x =NULL, y = "Intensity")+
+            ggplot2::theme_classic()+ ggplot2::theme(plot.title=element_text(size=15,
                                                            face="bold",
                                                            color="Black",
                                                            hjust=0.5,
@@ -266,7 +266,7 @@ AS_boxplot<-function(data,
                                    axis.text.y=element_text(size=10),
                                    legend.position = legend_position)
 
-          ggsave(filename = paste(NAMES[number],"boxplot.png",collapse = ""),
+          ggplot2::ggsave(filename = paste(NAMES[number],"boxplot.png",collapse = ""),
                  path=paste0(getwd(),"/boxplot"),
                  width = fig_width,
                  height = fig_height)}}}

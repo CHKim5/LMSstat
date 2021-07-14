@@ -33,6 +33,5 @@ Imports:
     ROCnReg
 Depends:
     plyr,
-    dplyr,
-    ggplot2
+    dplyr
 Remotes: jpshanno/ecoflux

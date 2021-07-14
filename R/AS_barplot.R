@@ -98,10 +98,10 @@ AS_barplot<-function(data,
                           color = "#e9ecef",
                           order = order,
                           width = width) +
-          geom_errorbar( aes(x=Group, ymin=len-SEM, ymax=len+SEM), width=0.2, colour="Black", alpha=1, size=0.5)+
-          scale_y_continuous(label=ecoflux::scientific_10x)+
-          labs(title=NAMES[number],x =NULL, y = "Intensity")+
-          theme_classic()+ ggplot2::theme(plot.title=element_text(size=15,
+          ggplot2::geom_errorbar( aes(x=Group, ymin=len-SEM, ymax=len+SEM), width=0.2, colour="Black", alpha=1, size=0.5)+
+          ggplot2::scale_y_continuous(label=ecoflux::scientific_10x)+
+          ggplot2::labs(title=NAMES[number],x =NULL, y = "Intensity")+
+          ggplot2::theme_classic()+ ggplot2::theme(plot.title=element_text(size=15,
                                                          face="bold",
                                                          color="Black",
                                                          hjust=0.5,
@@ -124,7 +124,7 @@ AS_barplot<-function(data,
                                      label = "p.adj.signif",
                                      size = 3.5,
                                      vjust = 0.05)
-        ggsave(filename = paste(NAMES[number],"barplot.jpg",collapse = ""),
+        ggplot2::ggsave(filename = paste(NAMES[number],"barplot.jpg",collapse = ""),
                path=paste0(getwd(),"/barplot"),
                width = fig_width,
                height = fig_height)}
@@ -135,10 +135,10 @@ AS_barplot<-function(data,
                           color = "#e9ecef",
                           order = order,
                           width = width) +
-          geom_errorbar( aes(x=Group, ymin=len-SEM, ymax=len+SEM), width=0.2, colour="Black", alpha=1, size=0.5)+
-          scale_y_continuous(label=ecoflux::scientific_10x)+
-          labs(title=NAMES[number],x =NULL, y = "Intensity")+
-          theme_classic()+ theme(plot.title=element_text(size=15,
+          ggplot2::geom_errorbar( aes(x=Group, ymin=len-SEM, ymax=len+SEM), width=0.2, colour="Black", alpha=1, size=0.5)+
+          ggplot2::scale_y_continuous(label=ecoflux::scientific_10x)+
+          ggplot2::labs(title=NAMES[number],x =NULL, y = "Intensity")+
+          ggplot2::theme_classic()+ ggplot2::theme(plot.title=element_text(size=15,
                                                                            face="bold",
                                                                            color="Black",
                                                                            hjust=0.5,
@@ -154,7 +154,7 @@ AS_barplot<-function(data,
                                                    axis.text.y=element_text(size=10),
                                  legend.position = legend_position)
 
-        ggsave(filename = paste(NAMES[number],"barplot.jpg",collapse = ""),
+        ggplot2::ggsave(filename = paste(NAMES[number],"barplot.jpg",collapse = ""),
                path=paste0(getwd(),"/barplot"),
                width = fig_width,
                height = fig_height)}}
@@ -215,10 +215,10 @@ AS_barplot<-function(data,
                             color = "#e9ecef",
                             order = order,
                             width = width) +
-            geom_errorbar( aes(x=Group, ymin=len-SEM, ymax=len+SEM), width=0.2, colour="Black", alpha=1, size=0.5)+
-            scale_y_continuous(label=ecoflux::scientific_10x)+
-            labs(title=NAMES[number],x =NULL, y = "Intensity")+
-            theme_classic()+ ggplot2::theme(plot.title=element_text(size=15,
+            ggplot2::geom_errorbar( aes(x=Group, ymin=len-SEM, ymax=len+SEM), width=0.2, colour="Black", alpha=1, size=0.5)+
+            ggplot2::scale_y_continuous(label=ecoflux::scientific_10x)+
+            ggplot2::labs(title=NAMES[number],x =NULL, y = "Intensity")+
+            ggplot2::theme_classic()+ ggplot2::theme(plot.title=element_text(size=15,
                                                                     face="bold",
                                                                     color="Black",
                                                                     hjust=0.5,
@@ -241,7 +241,7 @@ AS_barplot<-function(data,
                                        label = "p.adj.signif",
                                        size = 3.5,
                                        vjust = 0.05)
-          ggsave(filename = paste(NAMES[number],"barplot.jpg",collapse = ""),
+          ggplot2::ggsave(filename = paste(NAMES[number],"barplot.jpg",collapse = ""),
                  path=paste0(getwd(),"/barplot"),
                  width = fig_width,
                  height = fig_height)}
@@ -253,10 +253,10 @@ AS_barplot<-function(data,
                             color = "#e9ecef",
                             order = order,
                             width = width) +
-            geom_errorbar( aes(x=Group, ymin=len-SEM, ymax=len+SEM), width=0.2, colour="Black", alpha=1, size=0.5)+
-            scale_y_continuous(label=ecoflux::scientific_10x)+
-            labs(title=NAMES[number],x =NULL, y = "Intensity")+
-            theme_classic()+ theme(plot.title=element_text(size=15,
+            ggplot2::geom_errorbar( aes(x=Group, ymin=len-SEM, ymax=len+SEM), width=0.2, colour="Black", alpha=1, size=0.5)+
+            ggplot2::scale_y_continuous(label=ecoflux::scientific_10x)+
+            ggplot2::labs(title=NAMES[number],x =NULL, y = "Intensity")+
+            ggplot2::theme_classic()+ ggplot2::theme(plot.title=element_text(size=15,
                                                            face="bold",
                                                            color="Black",
                                                            hjust=0.5,
@@ -272,7 +272,7 @@ AS_barplot<-function(data,
                                    axis.text.y=element_text(size=10),
                                    legend.position = legend_position)
 
-          ggsave(filename = paste(NAMES[number],"barplot.jpg",collapse = ""),
+          ggplot2::ggsave(filename = paste(NAMES[number],"barplot.jpg",collapse = ""),
                  path=paste0(getwd(),"/barplot"),
                  width = fig_width,
                  height = fig_height)}
