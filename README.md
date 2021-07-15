@@ -42,7 +42,7 @@ write.csv(Statfile[["Result"]],"p_value_result.csv")  # Write csv with all the p
 * significant_variable_only = F  # If set to TRUE, insignificant results will not be plotted
 * color = c("#FF3300", "#FF6600", "#FFCC00", "#99CC00", "#0066CC", "#660099") # Colors for the plots
 * legend_position = "none" #  "none","left","right","bottom","top"
-* order = NULL # Order of the groups c("some_metabolite1","some_metabolite3","some_metabolite2")
+* order = NULL # Order of the groups c("LAC","LUE","WEI","SDF","HGH","ASH")
 * tip_length = 0.01 # significance tip length
 * label_size = 2.88 # significance label size
 * step_increase = 0.05 #significance step increase
