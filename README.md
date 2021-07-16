@@ -71,7 +71,7 @@ data(Data) # Sample data
 Statfile<-Allstats(Data,Adjust_p_value = T, Adjust_method = "BH")
 ```
 
-#### Adjustable parameters
+##### Adjustable parameters
 * Adjust_p_value = T # Set True if adjustment is needed
 * Adjust_method = F # Adjustment methods frequently used. c("holm", "hochberg", "hommel", "bonferroni", "BH", "BY","fdr", "none")
 
@@ -101,7 +101,7 @@ AS_barplot(Statfile,asterisk = "Scheffe")
 <img src="https://user-images.githubusercontent.com/77651662/125715925-0878ec77-30bf-4859-8e56-316d98b6d520.jpg" width="350" height="250">
 </p>
 
-#### Adjustable parameters
+##### Adjustable parameters
 
 * asterisk = "t_test"   #c("Dunn","Scheffe","u_test","t_test")
 * significant_variable_only = F  # If set to TRUE, insignificant results will not be plotted
@@ -145,7 +145,7 @@ Result<-Multi_Perm(Data,Classification) # The group information is treated as fa
 
 
 
-#### Adjustable parameters
+##### Adjustable parameters
 * method = Dissimilarity index c("manhattan", "euclidean", "canberra", "clark", "bray", "kulczynski", "jaccard", "gower", "altGower", "morisita", "horn", "mountford", "raup", "binomial", "chao", "cao", "mahalanobis", "chisq",chord")
 
 #### NMDS
@@ -159,7 +159,7 @@ NMDS(Data,methods = c("manhattan","bray","euclidean"))
 </p>
 <p align="center">NMDS plot with bray distance and p-value from PERMANOVA</p>
 
-#### Adjustable parameters
+##### Adjustable parameters
 * methods = Dissimilarity index c("manhattan", "euclidean", "canberra", "clark", "bray", "kulczynski", "jaccard", "gower", "altGower", "morisita", "horn", "mountford", "raup", "binomial", "chao", "cao", "mahalanobis", "chisq",chord")
 
 * color = c("#FF3300", "#FF6600", "#FFCC00", "#99CC00", "#0066CC", "#660099") # Colors for the plots
