@@ -7,9 +7,9 @@
 #' @return vegan::adonis2(Dist_Met~Group,method = "bray",by = NULL,data = x_y_coord_G)
 #' @export
 #'
-#' @examples df<-data(Data)
-#' df_G<-data(Classification)
-#' Multi_Perm(df,df_G)
+#' @examples data(Data)
+#' data(Classification)
+#' Result<-Multi_Perm(Data,Classification)
 #' Note that the code recognizes each class as a factor.
 Multi_Perm<-function(Data,Classification,method="bray"){
   colnames(Data)<-Data[1,];Data<-Data[-1,];Data<-Data[,-2]

@@ -6,8 +6,8 @@
 #' @return vegan::adonis2(Dist_Met~Group,method = "bray",by = NULL,data = x_y_coord_G)
 #' @export
 #'
-#' @examples Df<-data(Data)
-#' Indiv_Perm(Df)
+#' @examples data(Data)
+#' Indiv_Perm(Data)
 Indiv_Perm<-function(Data,method="bray"){
   colnames(Data)<-Data[1,];Data<-Data[-1,];Data<-Data[,-2]
   rownames(Data)<-Data[,1];Data<-Data[,-1]

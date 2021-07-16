@@ -18,6 +18,6 @@ vegan::adonis2(Dist_Met~Group,method = "bray",by = NULL,data = x_y_coord_G)
 Computes PERMANOVA with vegan using specific group information
 }
 \examples{
-Df<-data(Data)
-Indiv_Perm(Df)
+data(Data)
+Indiv_Perm(Data)
 }

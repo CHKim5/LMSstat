@@ -20,8 +20,8 @@ vegan::adonis2(Dist_Met~Group,method = "bray",by = NULL,data = x_y_coord_G)
 Computes PERMANOVA with vegan using multiple group information
 }
 \examples{
-df<-data(Data)
-df_G<-data(Classification)
-Multi_Perm(df,df_G)
+data(Data)
+data(Classification)
+Result<-Multi_Perm(Data,Classification)
 Note that the code recognizes each class as a factor.
 }
