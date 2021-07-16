@@ -28,6 +28,8 @@ AS_dotplot(
 
 \item{color}{colors used for ggplots.}
 
+\item{legend_position}{legend position "none","left","right","bottom","top"}
+
 \item{order}{order of the groups; order = c("A","B","C")}
 
 \item{tip_length}{significance tip length}

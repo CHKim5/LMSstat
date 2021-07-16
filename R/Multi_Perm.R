@@ -7,10 +7,9 @@
 #' @return vegan::adonis2(Dist_Met~Group,method = "bray",by = NULL,data = x_y_coord_G)
 #' @export
 #'
-#' @examples D<-as.data.frame(cbind(LETTERS,rep(1,26),c(rep("A",7),rep("B",6),rep("C",13)),runif(26),runif(26)))
-#' Datas<-rbind(c("Sample","Multilevel","Group","some metabolite1","some metabolite2"),D)
-#' Datas_G<-rbind(c("Sample","some class0","some class1","some class2"),D)
-#' Multi_Perm(Datas,Datas_G)
+#' @examples df<-data(Data)
+#' df_G<-data(Classification)
+#' Multi_Perm(df,df_G)
 #' Note that the code recognizes each class as a factor.
 Multi_Perm<-function(Data,Classification,method="bray"){
   colnames(Data)<-Data[1,];Data<-Data[-1,];Data<-Data[,-2]

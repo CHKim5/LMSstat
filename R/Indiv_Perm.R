@@ -6,9 +6,8 @@
 #' @return vegan::adonis2(Dist_Met~Group,method = "bray",by = NULL,data = x_y_coord_G)
 #' @export
 #'
-#' @examples D<-as.data.frame(cbind(LETTERS,rep(1,26),c(rep("A",7),rep("B",6),rep("C",13)),runif(26),runif(26)))
-#' Datas<-rbind(c("Sample","Multilevel","Group","some metabolite1","some metabolite2"),D)
-#' Indiv_Perm(Datas)
+#' @examples Df<-data(Data)
+#' Indiv_Perm(Df)
 Indiv_Perm<-function(Data,method="bray"){
   colnames(Data)<-Data[1,];Data<-Data[-1,];Data<-Data[,-2]
   rownames(Data)<-Data[,1];Data<-Data[,-1]
