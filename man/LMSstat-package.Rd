@@ -17,13 +17,15 @@ The package includes
 * PERMANOVA
 
 * ROC and AROC
+
+* NMDS
 }
 \details{
 \tabular{ll}{
 Package: \tab LMSstat\cr
 Type: \tab Package\cr
-Version: \tab 1.0.3\cr
-Date: \tab 2021-07-12\cr
+Version: \tab 1.0.4\cr
+Date: \tab 2021-07-16\cr
 License: \tab MIT License\cr
 }
 }

@@ -1,7 +1,7 @@
 #' Automatically save NMDS plots for the selected dimension metrics
 #'
-#' @param Data 
-#' @param methods #methods<- c("manhattan", "euclidean", "canberra", "clark", "bray", "kulczynski", "jaccard", "gower", "altGower", "morisita", "horn",  "raup", "binomial", "mahalanobis", "chisq","chord") #can be any distance c["manhattan", "euclidean", "canberra", "clark", "bray", "kulczynski", "jaccard", "gower", "altGower", "morisita", "horn", "mountford", "raup", "binomial", "chao", "cao", "mahalanobis", "chisq","chord"]
+#' @param Data
+#' @param methods #methods<- c("manhattan", "euclidean", "canberra", "clark", "bray", "kulczynski", "jaccard", "gower", "altGower", "morisita", "horn",  "raup", "binomial", "mahalanobis", "chisq","chord")
 #' @param color colors used for ggplots.color=c("#FF3300","#FF6600","#FFCC00","#99CC00","#0066CC","#660099")
 #' @param legend_position legend position "none","left","right","bottom","top"
 #' @param fig_width figure size
@@ -10,7 +10,7 @@
 #' @return NMDS plot
 #' @export
 #'
-#' @examples data(Data) 
+#' @examples data(Data)
 #' NMDS(Data,methods = c("euclidian","manhattan","bray"))
 
 NMDS<-function(Data,
@@ -39,8 +39,8 @@ NMDS<-function(Data,
                      by = NULL,
                      data = x_y_coord_G)[["Pr(>F)"]][1] #Model P_Value
   ggplot2::ggplot() +
-    ggplot2::geom_point(data = x_y_coord_G, ggplot2::aes(x = NMDS1, y = NMDS2, 
-                                       color = Group), size = 3)+ 
+    ggplot2::geom_point(data = x_y_coord_G, ggplot2::aes(x = NMDS1, y = NMDS2,
+                                       color = Group), size = 3)+
     ggplot2::theme_minimal() +
     ggplot2::scale_color_manual(values = color)+
     ggplot2::theme(plot.title=ggplot2::element_text(size=10,

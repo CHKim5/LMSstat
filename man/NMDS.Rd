@@ -14,9 +14,7 @@ NMDS(
 )
 }
 \arguments{
-\item{Data}{}
-
-\item{methods}{#methods<- c("manhattan", "euclidean", "canberra", "clark", "bray", "kulczynski", "jaccard", "gower", "altGower", "morisita", "horn",  "raup", "binomial", "mahalanobis", "chisq","chord") #can be any distance c\link{"manhattan", "euclidean", "canberra", "clark", "bray", "kulczynski", "jaccard", "gower", "altGower", "morisita", "horn", "mountford", "raup", "binomial", "chao", "cao", "mahalanobis", "chisq","chord"}}
+\item{methods}{#methods<- c("manhattan", "euclidean", "canberra", "clark", "bray", "kulczynski", "jaccard", "gower", "altGower", "morisita", "horn",  "raup", "binomial", "mahalanobis", "chisq","chord")}
 
 \item{color}{colors used for ggplots.color=c("#FF3300","#FF6600","#FFCC00","#99CC00","#0066CC","#660099")}
 
@@ -33,6 +31,6 @@ NMDS plot
 Automatically save NMDS plots for the selected dimension metrics
 }
 \examples{
-data(Data) 
+data(Data)
 NMDS(Data,methods = c("euclidian","manhattan","bray"))
 }
