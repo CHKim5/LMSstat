@@ -18,6 +18,7 @@ The package includes
 ```
 install.packages("devtools")
 devtools::install_github("CHKim5/LMSstat")
+library(LMSstat)
 ```
 
 
@@ -27,6 +28,7 @@ devtools::install_github("CHKim5/LMSstat")
 * Simple statistics
 * Barplot, Boxplot, Dotplot  
 * PERMANOVA
+* NMDS
 
 ```
 #Sample Data provided within the package
