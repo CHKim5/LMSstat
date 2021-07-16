@@ -28,3 +28,8 @@
     \item AS_dotplot Optimization for paper ready figures
   }
 }
+\section{Changes in version 1.0.4,(July 2021)}{
+  \itemize{
+  \item NMDS added
+  }
+}

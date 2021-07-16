@@ -20,9 +20,8 @@ List including Result Matrix of p-values, converted datas.
 Automatically processes T-test, U-test, Anova, Scheffe(Anova Post-Hoc), Krukal Wallis, Dunn-test(BH adjusted,(Kurkal Wallis Post-Hoc)) while allowing adjustment of FDR
 }
 \examples{
-D<-as.data.frame(cbind(LETTERS,rep(1,26),c(rep("A",7),rep("B",6),rep("C",13)),runif(26),runif(26)))
-Datas<-rbind(c("Sample","Multilevel","Group","some metabolite1","some metabolite2"),D)
-Allstats(Datas)
+data(Data)
+Result<-Allstats(Data)
 
 
 }

@@ -50,9 +50,3 @@ ggbarplot
 \description{
 Automatically save barplots for all metabolites including asterisks for significance.
 }
-\examples{
-D<-as.data.frame(cbind(LETTERS,rep(1,26),c(rep("A",7),rep("B",6),rep("C",13)),runif(26),runif(26)))
-Datas<-rbind(c("Sample","Multilevel","Group","some metabolite1","some metabolite2"),D)
-Test<-Allstats(Datas)
-AS_barplot(Test,asterisk = "Dunn",significant_variable_only = F,color = c("#FF3300","#FF6600","#FFCC00","#99CC00","#0066CC","#660099") )
-}

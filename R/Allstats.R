@@ -7,9 +7,8 @@
 #' @return List including Result Matrix of p-values, converted datas.
 #' @export
 #'
-#' @examples D<-as.data.frame(cbind(LETTERS,rep(1,26),c(rep("A",7),rep("B",6),rep("C",13)),runif(26),runif(26)))
-#' Datas<-rbind(c("Sample","Multilevel","Group","some metabolite1","some metabolite2"),D)
-#' Allstats(Datas)
+#' @examples data(Data)
+#' Result<-Allstats(Data)
 #'
 #'
 Allstats<-function (Data, Adjust_p_value = T, Adjust_method = "BH")
