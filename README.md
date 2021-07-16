@@ -7,12 +7,44 @@ The package includes
 
 * Bar, Box, Dot plots with significance (u-test, t-test, post hocs of Anova and Kruskal Wallis)
 
+* PERMANOVA
+
 ## Instructions
 
 ### Installation
 install.packages("devtools")
 
 devtools::install_github("CHKim5/LMSstat")
+
+### Basic structure of the Data
+#### Used in
+
+* Simple statistics
+* Barplot, Boxplot, Dotplot  
+* PERMANOVA
+
+Data<-read.csv("statT.csv",header = F)
+
+**provided within the package, can be called with data("Data")**
+
+<p align="center">  
+<img src="https://user-images.githubusercontent.com/77651662/125877205-e140d306-81d8-459f-8414-b8ef3bca63d7.PNG" width="750" height="400">
+</p>
+<p align="center">statT.csv</p>
+
+
+#### Used in
+
+* PERMANOVA
+
+Classification<-read.csv("statT_G.csv",header = F)
+
+ **provided within the package, can be called with data("Classification")**
+<p align="center">
+<img src="https://user-images.githubusercontent.com/77651662/125877154-d01ad8b0-25cd-448b-905d-749a6cc93552.PNG" width="500" height="400">
+</p>
+<p align="center">statT_G.csv</p>
+
 
 ### Univariate statistics
 
@@ -49,3 +81,30 @@ write.csv(Statfile[["Result"]],"p_value_result.csv")  # Write csv with all the p
 * width = 0.3 # box width ; size = 3 # dot size
 * fig_width = NA #figure size 
 * fig_height = NA #figure size
+### Multivariate statistics
+#### PERMANOVA
+data("Data")
+
+data("Classification")
+
+#### Single factor
+PERMANOVA done with the Group column
+Indiv_Perm(Data) # The group information is treated as a factor
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/77651662/125876315-c51448c9-eef1-4299-b85e-34e62a99bea8.PNG" width="750" height="225">
+</p>
+
+#### Multiple Factors
+
+Loops PERMANOVA over different classes provided by Classification
+
+Result<-Multi_Perm(Data,Classification) # The group information is treated as factors
+<p align="center">
+<img src="https://user-images.githubusercontent.com/77651662/125875797-89b696dd-f2a7-4ff3-aec9-74ac4b9075f9.PNG" width="750" height="400">
+</p>
+
+
+
+#### Adjustable parameters
+* method = Dissimilarity index c("manhattan", "euclidean", "canberra", "clark", "bray", "kulczynski", "jaccard", "gower", "altGower", "morisita", "horn", "mountford", "raup", "binomial", "chao", "cao", "mahalanobis", "chisq",chord")
