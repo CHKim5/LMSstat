@@ -9,6 +9,8 @@ The package includes
 
 * PERMANOVA
 
+* NMDS
+
 ## Instructions
 
 ### Installation
@@ -145,3 +147,23 @@ Result<-Multi_Perm(Data,Classification) # The group information is treated as fa
 
 #### Adjustable parameters
 * method = Dissimilarity index c("manhattan", "euclidean", "canberra", "clark", "bray", "kulczynski", "jaccard", "gower", "altGower", "morisita", "horn", "mountford", "raup", "binomial", "chao", "cao", "mahalanobis", "chisq",chord")
+
+#### NMDS
+```
+data("Data")
+
+NMDS(Data,methods = c("manhattan","bray","euclidean")) # c("canberra", "clark", "mahalanobis", "chisq","chord".....)
+```
+<p align="center">
+<img src=https://user-images.githubusercontent.com/77651662/125900616-c0c6728d-0b3a-445b-bf41-e32be766924f.png width="600" height="500">
+</p>
+<p align="center">NMDS plot with bray distance and p-value from PERMANOVA</p>
+
+#### Adjustable parameters
+* methods = Dissimilarity index c("manhattan", "euclidean", "canberra", "clark", "bray", "kulczynski", "jaccard", "gower", "altGower", "morisita", "horn", "mountford", "raup", "binomial", "chao", "cao", "mahalanobis", "chisq",chord")
+
+* color = c("#FF3300", "#FF6600", "#FFCC00", "#99CC00", "#0066CC", "#660099") # Colors for the plots
+* legend_position = "none" #  "none","left","right","bottom","top"
+* fig_width = NA #figure size 
+* fig_height = NA #figure size
+
