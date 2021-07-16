@@ -152,7 +152,7 @@ Result<-Multi_Perm(Data,Classification) # The group information is treated as fa
 ```
 data("Data")
 
-NMDS(Data,methods = c("manhattan","bray","euclidean")) # c("canberra", "clark", "mahalanobis", "chisq","chord".....)
+NMDS(Data,methods = c("manhattan","bray","euclidean"))
 ```
 <p align="center">
 <img src=https://user-images.githubusercontent.com/77651662/125900616-c0c6728d-0b3a-445b-bf41-e32be766924f.png width="600" height="500">
