@@ -12,9 +12,12 @@ The package includes
 ## Instructions
 
 ### Installation
-install.packages("devtools")
 
+```
+install.packages("devtools")
 devtools::install_github("CHKim5/LMSstat")
+```
+
 
 ### Basic structure of the Data
 #### Used in
@@ -23,8 +26,9 @@ devtools::install_github("CHKim5/LMSstat")
 * Barplot, Boxplot, Dotplot  
 * PERMANOVA
 
+```
 Data<-read.csv("statT.csv",header = F)
-
+```
 **provided within the package, can be called with data("Data")**
 
 <p align="center">  
@@ -37,7 +41,9 @@ Data<-read.csv("statT.csv",header = F)
 
 * PERMANOVA
 
+```
 Classification<-read.csv("statT_G.csv",header = F)
+```
 
  **provided within the package, can be called with data("Classification")**
 <p align="center">
@@ -48,18 +54,34 @@ Classification<-read.csv("statT_G.csv",header = F)
 
 ### Univariate statistics
 
+```
 data(Data) # Sample data 
 
 Statfile<-Allstats(Data,Adjust_p_value = T, Adjust_method = "BH")
+```
+
 #### Adjustable parameters
 * Adjust_p_value = T # Set True if adjustment is needed
 * Adjust_method = F # Adjustment methods frequently used. c("holm", "hochberg", "hommel", "bonferroni", "BH", "BY","fdr", "none")
 
+```
 head(Statfile[["Result"]]) # includes all statistical results
 
 write.csv(Statfile[["Result"]],"p_value_result.csv")  # Write csv with all the p-value included
-
+```
 ### Plots
+
+```
+# Makes a subdirectory and saves boxplots for all the variables
+AS_boxplot(Statfile,asterisk = "u_test") 
+
+# Makes a subdirectory and saves dotplots for all the variables
+AS_dotplot(Statfile,asterisk = "t_test") 
+
+# Makes a subdirectory and saves barplots for all the variables
+AS_barplot(Statfile,asterisk = "Scheffe") 
+```
+
 
 &emsp;&emsp;&emsp;&emsp;&emsp;**AS_boxplot(Statfile)**&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**AS_dotplot(Statfile)**&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**AS_barplot(Statfile)**
 <p align="center">
@@ -70,7 +92,7 @@ write.csv(Statfile[["Result"]],"p_value_result.csv")  # Write csv with all the p
 
 #### Adjustable parameters
 
-* asterisk = "t_test"  
+* asterisk = "t_test"   #c("Dunn","Scheffe","u_test","t_test")
 * significant_variable_only = F  # If set to TRUE, insignificant results will not be plotted
 * color = c("#FF3300", "#FF6600", "#FFCC00", "#99CC00", "#0066CC", "#660099") # Colors for the plots
 * legend_position = "none" #  "none","left","right","bottom","top"
@@ -83,13 +105,17 @@ write.csv(Statfile[["Result"]],"p_value_result.csv")  # Write csv with all the p
 * fig_height = NA #figure size
 ### Multivariate statistics
 #### PERMANOVA
+```
 data("Data")
 
 data("Classification")
+```
 
 #### Single factor
 PERMANOVA done with the Group column
+```
 Indiv_Perm(Data) # The group information is treated as a factor
+```
 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/77651662/125876315-c51448c9-eef1-4299-b85e-34e62a99bea8.PNG" width="750" height="225">
@@ -99,7 +125,9 @@ Indiv_Perm(Data) # The group information is treated as a factor
 
 Loops PERMANOVA over different classes provided by Classification
 
+```
 Result<-Multi_Perm(Data,Classification) # The group information is treated as factors
+```
 <p align="center">
 <img src="https://user-images.githubusercontent.com/77651662/125875797-89b696dd-f2a7-4ff3-aec9-74ac4b9075f9.PNG" width="750" height="400">
 </p>
