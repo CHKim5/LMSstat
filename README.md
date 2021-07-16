@@ -27,9 +27,15 @@ devtools::install_github("CHKim5/LMSstat")
 * PERMANOVA
 
 ```
+#Sample Data provided within the package
+data("Data")
+
+# Uploading your own Data
 Data<-read.csv("statT.csv",header = F)
 ```
-**provided within the package, can be called with data("Data")**
+**The column "Multilevel" is mandatory for the code to run flawlessly.**
+
+**If Multilevel is not used, fill the column with random characters**
 
 <p align="center">  
 <img src="https://user-images.githubusercontent.com/77651662/125877205-e140d306-81d8-459f-8414-b8ef3bca63d7.PNG" width="750" height="400">
@@ -42,10 +48,13 @@ Data<-read.csv("statT.csv",header = F)
 * PERMANOVA
 
 ```
+#Sample Data provided within the package
+data("Classification")
+
+# Uploading your own Data
 Classification<-read.csv("statT_G.csv",header = F)
 ```
 
- **provided within the package, can be called with data("Classification")**
 <p align="center">
 <img src="https://user-images.githubusercontent.com/77651662/125877154-d01ad8b0-25cd-448b-905d-749a6cc93552.PNG" width="500" height="400">
 </p>
