@@ -177,6 +177,9 @@ NMDS(Data,methods = c("manhattan","bray","euclidean"))
 * legend_position = "none" #  "none","left","right","bottom","top"
 * fig_width = NA #figure size 
 * fig_height = NA #figure size
+* names = F # used to indicate sample names
+* dotsize = 3 # dotsize
+* labsize = 3 # label size
 #### PCA
 ```
 data("Data")
