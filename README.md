@@ -11,6 +11,8 @@ The package includes
 
 * NMDS
 
+* PCA
+
 ## Instructions
 
 ### Installation
@@ -29,12 +31,14 @@ library(LMSstat)
 * Barplot, Boxplot, Dotplot  
 * PERMANOVA
 * NMDS
+* PCA
 
 ```
 #Sample Data provided within the package
 data("Data")
 
 # Uploading your own Data
+setwd("C:/Users/82102/Desktop")
 Data<-read.csv("statT.csv",header = F)
 ```
 **The column "Multilevel" is mandatory for the code to run flawlessly.**
