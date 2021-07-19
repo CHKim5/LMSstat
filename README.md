@@ -19,7 +19,9 @@ The package includes
 
 ```
 install.packages("devtools")
+
 devtools::install_github("CHKim5/LMSstat")
+
 library(LMSstat)
 ```
 
@@ -35,10 +37,13 @@ library(LMSstat)
 
 ```
 #Sample Data provided within the package
+
 data("Data")
 
 # Uploading your own Data
+
 setwd("C:/Users/82102/Desktop")
+
 Data<-read.csv("statT.csv",header = F)
 ```
 **The column "Multilevel" is mandatory for the code to run flawlessly.**
