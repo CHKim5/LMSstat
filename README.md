@@ -168,4 +168,23 @@ NMDS(Data,methods = c("manhattan","bray","euclidean"))
 * legend_position = "none" #  "none","left","right","bottom","top"
 * fig_width = NA #figure size 
 * fig_height = NA #figure size
+#### PCA
+```
+data("Data")
 
+PCA(Data,components = c(1,2),legend_position = "none")
+```
+<p align="center">
+<img src=https://user-images.githubusercontent.com/77651662/126108588-cfe688c6-2c90-485d-a197-ef1eb7a82cb5.png width="600" height="500">
+</p>
+<p align="center">PCA plot with selected components</p>
+
+##### Adjustable parameters
+* color = c("#FF3300", "#FF6600", "#FFCC00", "#99CC00", "#0066CC", "#660099") # Colors for the plots
+* legend_position = "none" #  "none","left","right","bottom","top"
+* fig_width = NA #figure size 
+* fig_height = NA #figure size
+* components = c(1,2) # selected components
+* names = F # used to indicate sample names
+* dotsize = 3 # dotsize
+* labsize = 3 # label size
