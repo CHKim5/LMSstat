@@ -19,13 +19,15 @@ The package includes
 * ROC and AROC
 
 * NMDS
+
+* PCA
 }
 \details{
 \tabular{ll}{
 Package: \tab LMSstat\cr
 Type: \tab Package\cr
-Version: \tab 1.0.4\cr
-Date: \tab 2021-07-16\cr
+Version: \tab 1.0.5\cr
+Date: \tab 2021-07-19\cr
 License: \tab MIT License\cr
 }
 }

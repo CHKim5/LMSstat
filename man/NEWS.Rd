@@ -33,3 +33,8 @@
   \item NMDS added
   }
 }
+\section{Changes in version 1.0.5,(July 2021)}{
+  \itemize{
+  \item PCA added
+  }
+}

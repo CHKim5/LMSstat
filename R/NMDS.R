@@ -1,6 +1,6 @@
 #' Automatically save NMDS plots for the selected dimension metrics
 #'
-#' @param Data
+#' @param Data uploaded data
 #' @param methods c("manhattan", "euclidean", "canberra", "clark", "bray", "kulczynski", "jaccard", "gower", "altGower", "morisita", "horn",  "raup", "binomial", "mahalanobis", "chisq","chord")
 #' @param color colors used for ggplots.color=c("#FF3300","#FF6600","#FFCC00","#99CC00","#0066CC","#660099")
 #' @param legend_position legend position "none","left","right","bottom","top"
