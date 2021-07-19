@@ -66,7 +66,7 @@ NMDS<-function(Data,
                           type = "norm")+
     ggplot2::ggtitle(paste(method,"index/distance, ","Stress Level : ",NMDS$stress,"Model_p_value",M_p_value))
   if (names == T){
-    sem_res+ggrepel::geom_text_repel(vjust = 0, nudge_y = 0.5,size=labsize)}
+    sem_res+ggrepel::geom_text_repel(size=labsize)}
   else {sem_res}
   ggplot2::ggsave(paste(method,"NMDS.png",sep = "_"),
                   path=paste0(getwd(),"/NMDS"),

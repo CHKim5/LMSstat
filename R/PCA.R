@@ -60,7 +60,7 @@ PCA<-function(Data,
                                                        color = Group), type = 'norm')")))+
     ggplot2::ggtitle(paste("Component", components[1]," & Component", components[2]," PCA result"))
   if (names == T){
-    sem_res+ggrepel::geom_text_repel(vjust = 0, nudge_y = 0.5,size=labsize)}
+    sem_res+ggrepel::geom_text_repel(size=labsize)}
   else {sem_res}
   ggplot2::ggsave(paste(components[1],components[2],"label",names,"PCA.png",sep = "_"),
                   path=paste0(getwd(),"/PCA"),
