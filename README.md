@@ -170,6 +170,7 @@ dev.off() # Saved as PDF
 * C_size = 3 # column text size
 * Gcol =c("ASD" = "black","HGH"="red","LAC"="blue","LUE" ="grey","SDF" = "yellow","WEI"="green") # Color for top_annotation bar
 * dend_h = 0.5 #dendrite height 
+* a_h = 0.2 # top annotation hegiht
 
 ### Multivariate statistics
 #### PERMANOVA
