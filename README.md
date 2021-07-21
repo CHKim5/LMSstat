@@ -83,8 +83,6 @@ Classification<-read.csv("statT_G.csv",header = F)
 ### Univariate statistics
 
 ```
-data(Data) # Sample data 
-
 Statfile<-Allstats(Data,Adjust_p_value = T, Adjust_method = "BH")
 ```
 
@@ -135,8 +133,6 @@ AS_barplot(Statfile,asterisk = "Scheffe")
 ### Scaling & Transformation
 
 ```
-data(Data) # Sample data 
-
 scaled_data<-D_tran(Data,param = "Pareto")
 ```
 
@@ -147,8 +143,6 @@ scaled_data<-D_tran(Data,param = "Pareto")
 ### Heatmap
 
 ```
-data(Data) # Sample data 
-
 scaled_data<-D_tran(Data,param = "Pareto")
 
 AS_heatmap(scaled_data) #data inheriting from D_tran
@@ -182,7 +176,7 @@ dev.off() # Saved as PDF
 ```
 data("Data")
 
-data("Classification")
+data("Classification") 
 ```
 
 #### Single factor
@@ -213,8 +207,6 @@ Result<-Multi_Perm(Data,Classification) # The group information is treated as fa
 
 #### NMDS
 ```
-data("Data")
-
 NMDS(Data,methods = c("manhattan","bray","euclidean"))
 ```
 <p align="center">
@@ -234,8 +226,6 @@ NMDS(Data,methods = c("manhattan","bray","euclidean"))
 * labsize = 3 # label size
 #### PCA
 ```
-data("Data")
-
 PCA(Data,components = c(1,2),legend_position = "none")
 ```
 <p align="center">
