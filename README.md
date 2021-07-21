@@ -7,6 +7,10 @@ The package includes
 
 * Bar, Box, Dot plots with significance (u-test, t-test, post hocs of Anova and Kruskal Wallis)
 
+* Scaling & Transformation
+
+* Heatmap
+
 * PERMANOVA
 
 * NMDS
@@ -34,6 +38,8 @@ library(LMSstat)
 * PERMANOVA
 * NMDS
 * PCA
+* Scaling & Transformation
+* Heatmap
 
 ```
 #Sample Data provided within the package
@@ -125,6 +131,52 @@ AS_barplot(Statfile,asterisk = "Scheffe")
 * width = 0.3 # box width ; size = 3 # dot size
 * fig_width = NA #figure size 
 * fig_height = NA #figure size
+
+### Scaling & Transformation
+
+```
+data(Data) # Sample data 
+
+scaled_data<-D_tran(Data,param = "Pareto")
+```
+
+##### Adjustable parameters
+* param = "None" # "None","Auto","log10","Pareto"
+* save = F  #Set true if datafile is to be saved
+
+### Heatmap
+
+```
+data(Data) # Sample data 
+
+scaled_data<-D_tran(Data,param = "Pareto")
+
+AS_heatmap(scaled_data) #data inheriting from D_tran
+
+dev.off() # Saved as PDF
+```
+<p align="center">
+<img src="https://user-images.githubusercontent.com/77651662/126421942-247031e1-9f90-452f-b5bd-fdf5bdf5c058.PNG" width="750" height="400">
+</p>
+
+
+##### Adjustable parameters
+* col =c("green", "white", "red") # colors for heatmap 
+* col_lim = c(-3, 0, 3) # color boundaries 
+* reverse = T # T,F Reverse column and rows 
+* distance = "pearson" # Distance matrix for HCA "pearson", "manhattan","euclidean","spearman","kendall" , 
+* rownames = T # T,F
+* colnames = T # T,F
+* Hsize = (3,6) # Width & Height c(a,b)
+* g_legend = "Group" # Annotation legend title
+* h_legend = "Color Key" # Heatmap legend title
+* Title ="Title" # Title
+* T_size = 10 # Title text size
+* R_size = 3 # row text size
+* C_size = 3 # column text size
+* Gcol =c("ASD" = "black","HGH"="red","LAC"="blue","LUE" ="grey","SDF" = "yellow","WEI"="green") # Color for top_annotation bar
+* dend_h = 0.5 #dendrite height 
+
 ### Multivariate statistics
 #### PERMANOVA
 ```
