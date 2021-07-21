@@ -21,7 +21,8 @@ AS_heatmap(
   Gcol = c(ASD = "black", HGH = "red", LAC = "blue", LUE = "grey", SDF = "yellow", WEI
     = "green"),
   Title = "Sample Heatmap",
-  dend_h = 0.5
+  dend_h = 0.5,
+  a_h = 0.2
 )
 }
 \arguments{
@@ -56,6 +57,8 @@ AS_heatmap(
 \item{Title}{title}
 
 \item{dend_h}{dendrite height}
+
+\item{a_h}{top annotation height}
 }
 \value{
 Heatmap

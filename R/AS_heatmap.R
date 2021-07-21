@@ -16,6 +16,7 @@
 #' @param Gcol Color for top_annotation bar c("ASD" = "black","HGH"="red","LAC"="blue","LUE" ="grey","SDF" = "yellow","WEI"="green")
 #' @param Title title
 #' @param dend_h dendrite height
+#' @param a_h top annotation height
 #'
 #' @return Heatmap
 #' @export
@@ -24,7 +25,8 @@
 #' data<-D_tran(Data,param="Auto",save=F)
 #' AS_heatmap(data)
 #' dev.off()
-AS_heatmap<-function(data,col = c("green", "white", "red"),
+AS_heatmap<-function(data,
+                     col = c("green", "white", "red"),
                      col_lim = c(-3,0,3),
                      reverse = F,
                      distance = "euclidean",
@@ -38,7 +40,8 @@ AS_heatmap<-function(data,col = c("green", "white", "red"),
                      C_size = 5,
                      Gcol = c("ASD" = "black","HGH"="red","LAC"="blue","LUE" ="grey","SDF" = "yellow","WEI"="green"),
                      Title = "Sample Heatmap",
-                     dend_h = 0.5){
+                     dend_h = 0.5,
+                     a_h = 0.2){
 m_for_heatmap<-as.matrix(data[,2:ncol(data)])
 colors = circlize::colorRamp2(col_lim, col)
 if (reverse == T){
@@ -51,7 +54,7 @@ if (reverse == T){
 Gcol_D<-as.data.frame(Gcol)
 ha = ComplexHeatmap::HeatmapAnnotation(
   Group = data$Group,col = list(Group = Gcol),
-  annotation_legend_param = F,show_annotation_name = F,show_legend = F)
+  annotation_legend_param = F,show_annotation_name = F,show_legend = F,simple_anno_size = grid::unit(a_h, "cm"))
 G_I = ComplexHeatmap::Legend(labels = rownames(Gcol_D), title = g_legend, legend_gp = grid::gpar(fill = Gcol_D[,1]))
 M_I = ComplexHeatmap::Legend(col_fun = colors, title = h_legend)
 pd = ComplexHeatmap::packLegend(list = list(G_I,M_I))
@@ -76,3 +79,4 @@ kt<-ComplexHeatmap::Heatmap(t(m_for_heatmap),
 pdf(paste0(Title,"Heatmap.pdf"))
 ComplexHeatmap::draw(kt, annotation_legend_list = pd)
 }
+?gpar
