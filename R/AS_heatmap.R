@@ -20,8 +20,10 @@
 #' @return Heatmap
 #' @export
 #'
-#' @examples data<-D_tran(Data,param="Auto",save=F)
+#' @examples data(Data)
+#' data<-D_tran(Data,param="Auto",save=F)
 #' AS_heatmap(data)
+#' dev.off()
 AS_heatmap<-function(data,col = c("green", "white", "red"),
                      col_lim = c(-3,0,3),
                      reverse = F,
@@ -71,7 +73,6 @@ kt<-ComplexHeatmap::Heatmap(t(m_for_heatmap),
                         width = grid::unit(Hsize[1], "cm"), height = grid::unit(Hsize[2], "cm"),
                         top_annotation = ha,
                         show_heatmap_legend = F)
-pdf(paste0(Title,"Heatmap.pdf")) 
+pdf(paste0(Title,"Heatmap.pdf"))
 ComplexHeatmap::draw(kt, annotation_legend_list = pd)
-dev.off() 
 }
