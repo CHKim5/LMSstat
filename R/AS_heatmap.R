@@ -55,7 +55,9 @@ Gcol_D<-as.data.frame(Gcol)
 ha = ComplexHeatmap::HeatmapAnnotation(
   Group = data$Group,col = list(Group = Gcol),
   annotation_legend_param = F,show_annotation_name = F,show_legend = F,simple_anno_size = grid::unit(a_h, "cm"))
-G_I = ComplexHeatmap::Legend(labels = rownames(Gcol_D), title = g_legend, legend_gp = grid::gpar(fill = Gcol_D[,1]))
+G_I = ComplexHeatmap::Legend(labels = rownames(Gcol_D), title = g_legend,
+                             legend_gp = grid::gpar(fill = Gcol_D[,1]),
+                             labels_gp = grid::gpar(fontfamily ="sans",fontface = "plain"))
 M_I = ComplexHeatmap::Legend(col_fun = colors, title = h_legend)
 pd = ComplexHeatmap::packLegend(list = list(G_I,M_I))
 kt<-ComplexHeatmap::Heatmap(t(m_for_heatmap),
@@ -79,4 +81,3 @@ kt<-ComplexHeatmap::Heatmap(t(m_for_heatmap),
 pdf(paste0(Title,"Heatmap.pdf"))
 ComplexHeatmap::draw(kt, annotation_legend_list = pd)
 }
-?gpar
