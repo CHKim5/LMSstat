@@ -64,6 +64,8 @@ Heatmap
 Heatmap with top annotation bar
 }
 \examples{
+data(Data)
 data<-D_tran(Data,param="Auto",save=F)
 AS_heatmap(data)
+dev.off()
 }

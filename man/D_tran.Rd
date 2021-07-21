@@ -21,5 +21,5 @@ Scale_Transformation of data file
 }
 \examples{
 data(Data)
-scales(Data,param = "Pareto")
+D_tran(Data,param = "Pareto")
 }

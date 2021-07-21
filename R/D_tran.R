@@ -8,7 +8,7 @@
 #' @export
 #'
 #' @examples data(Data)
-#' scales(Data,param = "Pareto")
+#' D_tran(Data,param = "Pareto")
 D_tran<-function(data,param = "None",save = F){
   colnames(data) <- data[1, ]
   data <- data[-1, -2]
