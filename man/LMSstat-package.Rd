@@ -14,6 +14,10 @@ The package includes
 
 * Bar, Box, Dot plots with significance (u-test, t-test, post hocs of Anova and Kruskal Wallis)
 
+* Scaling
+
+* Heatmap
+
 * PERMANOVA
 
 * ROC and AROC
@@ -21,13 +25,15 @@ The package includes
 * NMDS
 
 * PCA
+
+
 }
 \details{
 \tabular{ll}{
 Package: \tab LMSstat\cr
 Type: \tab Package\cr
-Version: \tab 1.0.5\cr
-Date: \tab 2021-07-19\cr
+Version: \tab 1.0.6\cr
+Date: \tab 2021-07-21\cr
 License: \tab MIT License\cr
 }
 }

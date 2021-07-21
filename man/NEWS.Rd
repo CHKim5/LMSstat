@@ -38,3 +38,9 @@
   \item PCA added
   }
 }
+\section{Changes in version 1.0.6,(July 2021)}{
+  \itemize{
+  \item Scaling added
+  \item AS_heatmap added
+  }
+}

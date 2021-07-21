@@ -57,7 +57,7 @@ PCA<-function(Data,
                    axis.title.y=ggplot2::element_text(size=10),  # Y axis title
                    legend.position = legend_position)+
     eval(parse(text=paste0("ggplot2::stat_ellipse(ggplot2::aes(x = PC",components[1],", y =PC",components[2],",
-                                                       color = Group), type = 'norm')")))+
+                                                       color = Group), type = 'norm',show.legend = F)")))+
     ggplot2::ggtitle(paste("Component", components[1]," & Component", components[2]," PCA result"))
   if (names == T){
     sem_res+ggrepel::geom_text_repel(size=labsize)}

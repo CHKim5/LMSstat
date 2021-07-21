@@ -10,7 +10,10 @@ NMDS(
   color = c("#FF3300", "#660099", "#FFCC00", "#99CC00", "#0066CC", "#FF6600"),
   legend_position = "bottom",
   fig_width = 24,
-  fig_height = 20
+  fig_height = 20,
+  dotsize = 3,
+  names = F,
+  labsize = 3
 )
 }
 \arguments{
@@ -25,6 +28,12 @@ NMDS(
 \item{fig_width}{figure size}
 
 \item{fig_height}{figure size}
+
+\item{dotsize}{dot size}
+
+\item{names}{whether the names are to be indicated T,F}
+
+\item{labsize}{label size}
 }
 \value{
 NMDS plot
@@ -35,4 +44,5 @@ Automatically save NMDS plots for the selected dimension metrics
 \examples{
 data(Data)
 NMDS(Data,methods = c("euclidian","manhattan","bray"))
+
 }

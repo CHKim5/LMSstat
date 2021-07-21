@@ -15,7 +15,7 @@
 #'
 #' @examples data(Data)
 #' NMDS(Data,methods = c("euclidian","manhattan","bray"))
-
+#'
 NMDS<-function(Data,
                methods=c("euclidean","bray"),
                color = c("#FF3300","#660099","#FFCC00","#99CC00","#0066CC","#FF6600"),
@@ -63,7 +63,8 @@ NMDS<-function(Data,
                    legend.position = legend_position)+
     ggplot2::stat_ellipse(ggplot2::aes(x=NMDS1,
                                        y=NMDS2,color=Group),
-                          type = "norm")+
+                          type = "norm",
+                          show.legend = F)+
     ggplot2::ggtitle(paste(method,"index/distance, ","Stress Level : ",NMDS$stress,"Model_p_value",M_p_value))
   if (names == T){
     sem_res+ggrepel::geom_text_repel(size=labsize)}

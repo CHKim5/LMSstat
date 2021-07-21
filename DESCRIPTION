@@ -1,6 +1,6 @@
 Package: LMSstat
 Title: AUTOMATION OF STATISTICAL TESTS WITH AN IDENTICAL DATA INPUT.
-Version: 1.0.5
+Version: 1.0.6
 Authors@R: 
     person(given = "CHANG-HO",
            family = "KIM",
@@ -31,7 +31,9 @@ Imports:
     tidyverse,
     pROC,
     ROCnReg,
-    ggrepel
+    ggrepel,
+    circlize,
+    ComplexHeatmap
 Depends:
     plyr,
     dplyr
