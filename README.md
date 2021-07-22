@@ -160,7 +160,7 @@ write.csv(Result,"Normality_test_Result.csv")
 ### Heatmap
 
 ```
-scaled_data<-D_tran(Data,param = "Pareto")
+scaled_data<-D_tran(Data,param = "Auto")
 
 AS_heatmap(scaled_data) #data inheriting from D_tran
 
