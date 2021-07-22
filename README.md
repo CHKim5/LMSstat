@@ -9,6 +9,8 @@ The package includes
 
 * Scaling & Transformation
 
+* Normality check (Shapiro Wilk test)
+
 * Heatmap
 
 * PERMANOVA
@@ -39,7 +41,9 @@ library(LMSstat)
 * NMDS
 * PCA
 * Scaling & Transformation
+* Normality check (Shapiro Wilk test)
 * Heatmap
+
 
 ```
 #Sample Data provided within the package
@@ -139,6 +143,19 @@ scaled_data<-D_tran(Data,param = "Pareto")
 ##### Adjustable parameters
 * param = "None" # "None","Auto","log10","Pareto"
 * save = F  #Set true if datafile is to be saved
+
+### Normality check
+
+```
+Result<-Norm_test(Data)
+
+write.csv(Result,"Normality_test_Result.csv")
+```
+<p align="center">
+<img src="https://user-images.githubusercontent.com/77651662/126578553-f2d583db-d649-4db7-92bb-8cfa9433904a.PNG" width="400" height="350">
+</p>
+
+
 
 ### Heatmap
 
