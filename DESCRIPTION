@@ -1,6 +1,6 @@
 Package: LMSstat
 Title: AUTOMATION OF STATISTICAL TESTS WITH AN IDENTICAL DATA INPUT.
-Version: 1.0.6
+Version: 1.0.7
 Authors@R: 
     person(given = "CHANG-HO",
            family = "KIM",

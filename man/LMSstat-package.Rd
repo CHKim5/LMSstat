@@ -18,6 +18,8 @@ The package includes
 
 * Heatmap
 
+* Shapiro test
+
 * PERMANOVA
 
 * ROC and AROC
@@ -32,8 +34,8 @@ The package includes
 \tabular{ll}{
 Package: \tab LMSstat\cr
 Type: \tab Package\cr
-Version: \tab 1.0.6\cr
-Date: \tab 2021-07-21\cr
+Version: \tab 1.0.7\cr
+Date: \tab 2021-07-22\cr
 License: \tab MIT License\cr
 }
 }

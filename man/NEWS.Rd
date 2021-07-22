@@ -44,3 +44,8 @@
   \item AS_heatmap added
   }
 }
+\section{Changes in version 1.0.7,(July 2021)}{
+  \itemize{
+  \item Shapiro test added
+  }
+}
