@@ -137,11 +137,18 @@ AS_barplot(Statfile,asterisk = "Scheffe")
 ### Scaling & Transformation
 
 ```
-scaled_data<-D_tran(Data,param = "Pareto")
+scaled_data<-D_tran(Data,param = "Auto")
 ```
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**Raw_Data**&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**Scaled_Data**
+<p align="center">
+<img src="https://user-images.githubusercontent.com/77651662/126724661-1e2ee121-ecfe-41eb-a52a-e3dca128c12c.PNG" width="450" height="200">
+<img src="https://user-images.githubusercontent.com/77651662/126724676-44c4eaac-c007-4eaf-9962-0b739291adb6.PNG" width="450" height="200">
+</p>
 
 ##### Adjustable parameters
+
 * param = "None" # "None","Auto","log10","Pareto"
+
 * save = F  #Set true if datafile is to be saved
 
 ### Normality check
