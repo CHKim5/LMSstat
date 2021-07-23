@@ -225,6 +225,7 @@ Result<-Multi_Perm(Data,Classification) # The group information is treated as fa
 
 #### NMDS
 ```
+# Makes a subdirectory and saves NMDS plots for all of the distance metrics
 NMDS(Data,methods = c("manhattan","bray","euclidean"))
 ```
 <p align="center">
@@ -244,6 +245,7 @@ NMDS(Data,methods = c("manhattan","bray","euclidean"))
 * labsize = 3 # label size
 #### PCA
 ```
+# Makes a subdirectory and saves PCA plot
 PCA(Data,components = c(1,2),legend_position = "none")
 ```
 <p align="center">
