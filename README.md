@@ -23,6 +23,15 @@ The package includes
 
 ### Installation
 
+#### Download R
+https://cran.r-project.org/bin/windows/base/
+#### Download R Studio
+https://www.rstudio.com/products/rstudio/download/
+#### Download Rtools
+https://cran.r-project.org/bin/windows/Rtools/
+
+#### Download package in R
+
 ```
 install.packages("devtools")
 
@@ -59,6 +68,9 @@ Data<-read.csv("statT.csv",header = F)
 **The column "Multilevel" is mandatory for the code to run flawlessly.**
 
 **If Multilevel is not used, fill the column with random characters**
+
+# Datafile needs to follow the following format
+# Care for Capitals: Sample, Multilevel, Group 
 
 <p align="center">  
 <img src="https://user-images.githubusercontent.com/77651662/125877205-e140d306-81d8-459f-8414-b8ef3bca63d7.PNG" width="750" height="400">
