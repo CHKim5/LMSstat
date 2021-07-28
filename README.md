@@ -23,6 +23,15 @@ The package includes
 
 ### Installation
 
+#### Download R
+https://cran.r-project.org/bin/windows/base/
+#### Download R Studio
+https://www.rstudio.com/products/rstudio/download/
+#### Download Rtools
+https://cran.r-project.org/bin/windows/Rtools/
+
+#### Download package in R
+
 ```
 install.packages("devtools")
 
@@ -59,6 +68,9 @@ Data<-read.csv("statT.csv",header = F)
 **The column "Multilevel" is mandatory for the code to run flawlessly.**
 
 **If Multilevel is not used, fill the column with random characters**
+
+# Datafile needs to follow the following format
+# Care for Capitals: Sample, Multilevel, Group 
 
 <p align="center">  
 <img src="https://user-images.githubusercontent.com/77651662/125877205-e140d306-81d8-459f-8414-b8ef3bca63d7.PNG" width="750" height="400">
@@ -126,7 +138,7 @@ AS_barplot(Statfile,asterisk = "Scheffe")
 * significant_variable_only = F  # If set to TRUE, insignificant results will not be plotted
 * color = c("#FF3300", "#FF6600", "#FFCC00", "#99CC00", "#0066CC", "#660099") # Colors for the plots
 * legend_position = "none" #  "none","left","right","bottom","top"
-* order = NULL # Order of the groups c("LAC","LUE","WEI","SDF","HGH","ASH")
+* order = NULL # Order of the groups c("LAC","LUE","WEI","SDF","HGH","ASH") "Color needs to be changed along with order" 
 * tip_length = 0.01 # significance tip length
 * label_size = 2.88 # significance label size
 * step_increase = 0.05 #significance step increase
