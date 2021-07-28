@@ -33,7 +33,7 @@ AS_boxplot<-function(data,
                      fig_height = NA){
   {#Summary
     ###Plot_data_prep###
-    ifelse(!dir.exists(file.path(getwd(), "barplot")), dir.create(file.path(getwd(), "boxplot")), FALSE)
+    ifelse(!dir.exists(file.path(getwd(), "boxplot")), dir.create(file.path(getwd(), "boxplot")), FALSE)
     data[["Data_renamed"]]<-data[["Data_renamed"]] %>% plyr::mutate(
       ZZZZ =data[["Data_renamed"]][,2] )
     data[["Data_renamed"]]<-data[["Data_renamed"]][,c(-1,-2)]
