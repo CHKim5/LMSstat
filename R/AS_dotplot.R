@@ -54,7 +54,23 @@ AS_dotplot<-function(data,
     else if (asterisk =="Dunn"){
       p_val_data<-data[["Dunn"]]}
     else {
-      print("Wrong asterisk input must be one of (Dunn,Scheffe,u_test,t_test)")}}
+      print("Wrong asterisk input must be one of (Dunn,Scheffe,u_test,t_test)")}
+    if(length(unique(data[["Data"]]$Group)) !=2){
+    for(a in 1:nrow(p_val_data)){
+      for(b in 1:ncol(p_val_data)){
+        if(is.nan(p_val_data[a,b])==T){
+          p_val_data[a,b]<-1
+        }
+      }
+    }}
+    else if (length(unique(data[["Data"]]$Group))==2){
+      for(b in 1:length(p_val_data)){
+        if(is.nan(p_val_data[b])==T){
+          p_val_data[b]<-1
+        }
+      }
+    }
+    }
   ###Plots###
   suppressWarnings(
     if (length(unique(data[["Data_renamed"]][["Group"]]))!=2) {

@@ -1,5 +1,6 @@
 \name{NEWS}
-\title{News for Package \pkg{LMSstat}}
+\alias{NEWS}
+\title{News for Package
 
 \section{Changes in version 1.0.1,(February 2021)}{
   \itemize{
