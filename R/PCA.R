@@ -9,6 +9,7 @@
 #' @param names whether the names are to be indicated T,F
 #' @param labsize label size
 #' @param dotsize dot size
+#' @param ellipse T, F
 #'
 #' @return PCA plot
 #' @export
@@ -23,7 +24,8 @@ PCA<-function(Data,
                components = c(1,2),
               names = F,
               dotsize = 3,
-              labsize = 3
+              labsize = 3,
+              ellipse = T
                ){
   ifelse(!dir.exists(file.path(getwd(), "PCA")), dir.create(file.path(getwd(), "PCA")), FALSE)
   colnames(Data) <- Data[1, ]
@@ -56,11 +58,17 @@ PCA<-function(Data,
                                                       size=10),  # X axis title
                    axis.title.y=ggplot2::element_text(size=10),  # Y axis title
                    legend.position = legend_position)+
-    eval(parse(text=paste0("ggplot2::stat_ellipse(ggplot2::aes(x = PC",components[1],", y =PC",components[2],",
-                                                       color = Group), type = 'norm',show.legend = F)")))+
-    ggplot2::ggtitle(paste("Component", components[1]," & Component", components[2]," PCA result"))
+      ggplot2::ggtitle(paste("Component", components[1]," & Component", components[2]," PCA result"))
+    if(ellipse ==T){
+      sem_res<- sem_res + eval(parse(text=paste0("ggplot2::stat_ellipse(ggplot2::aes(x = PC",components[1],", y =PC",components[2],",
+                                                       color = Group), type = 'norm',show.legend = F)")))
+    }
+    else{sem_res<-sem_res}
+
+
   if (names == T){
-    sem_res+ggrepel::geom_text_repel(size=labsize)}
+    sem_res+ggrepel::geom_text_repel(size=labsize)
+    sem_res}
   else {sem_res}
   ggplot2::ggsave(paste(components[1],components[2],"label",names,"PCA.png",sep = "_"),
                   path=paste0(getwd(),"/PCA"),

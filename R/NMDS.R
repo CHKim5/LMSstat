@@ -9,6 +9,7 @@
 #' @param names whether the names are to be indicated T,F
 #' @param labsize label size
 #' @param dotsize dot size
+#' @param ellipse T, F
 #'
 #' @return NMDS plot
 #' @export
@@ -24,7 +25,8 @@ NMDS<-function(Data,
                fig_height = 20,
                dotsize = 3,
                names = F,
-               labsize = 3
+               labsize = 3,
+               ellipse = T
                ){
   ifelse(!dir.exists(file.path(getwd(), "NMDS")), dir.create(file.path(getwd(), "NMDS")), FALSE)
   colnames(Data) <- Data[1, ]
@@ -61,13 +63,18 @@ NMDS<-function(Data,
                                                       size=10),  # X axis title
                    axis.title.y=ggplot2::element_text(size=10),  # Y axis title
                    legend.position = legend_position)+
-    ggplot2::stat_ellipse(ggplot2::aes(x=NMDS1,
-                                       y=NMDS2,color=Group),
-                          type = "norm",
-                          show.legend = F)+
     ggplot2::ggtitle(paste(method,"index/distance, ","Stress Level : ",NMDS$stress,"Model_p_value",M_p_value))
+  if(ellipse ==T){
+    sem_res<-sem_res+ggplot2::stat_ellipse(ggplot2::aes(x=NMDS1,
+                                                        y=NMDS2,color=Group),
+                                           type = "norm",
+                                           show.legend = F)
+  }
+  else{sem_res<-sem_res}
+
   if (names == T){
-    sem_res+ggrepel::geom_text_repel(size=labsize)}
+    sem_res+ggrepel::geom_text_repel(size=labsize)
+    sem_res}
   else {sem_res}
   ggplot2::ggsave(paste(method,"NMDS.png",sep = "_"),
                   path=paste0(getwd(),"/NMDS"),

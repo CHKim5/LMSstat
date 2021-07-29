@@ -28,14 +28,14 @@ The package includes
 
 * PCA
 
-
+* PCoA
 }
 \details{
 \tabular{ll}{
 Package: \tab LMSstat\cr
 Type: \tab Package\cr
-Version: \tab 1.0.7\cr
-Date: \tab 2021-07-22\cr
+Version: \tab 1.0.8\cr
+Date: \tab 2021-07-29\cr
 License: \tab MIT License\cr
 }
 }

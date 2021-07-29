@@ -13,7 +13,8 @@ PCA(
   components = c(1, 2),
   names = F,
   dotsize = 3,
-  labsize = 3
+  labsize = 3,
+  ellipse = T
 )
 }
 \arguments{
@@ -34,6 +35,8 @@ PCA(
 \item{dotsize}{dot size}
 
 \item{labsize}{label size}
+
+\item{ellipse}{T, F}
 }
 \value{
 PCA plot

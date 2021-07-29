@@ -49,3 +49,8 @@
   \item Shapiro test added
   }
 }
+\section{Changes in version 1.0.8,(July 2021)}{
+  \itemize{
+  \item PCoA added
+  }
+}
