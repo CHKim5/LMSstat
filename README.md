@@ -292,7 +292,7 @@ PCoA(Data,components = c(1,2),methods = c("bray", "manhattan")
 <p align="center">
 <img src=https://user-images.githubusercontent.com/77651662/127433788-7aa75a05-3559-4bd1-9504-c1234c5905d4.png width="600" height="500">
 </p>
-<p align="center">PCA plot with selected components</p>
+<p align="center">PCoA plot with selected components</p>
 
 ##### Adjustable parameters
 * color = c("#FF3300", "#FF6600", "#FFCC00", "#99CC00", "#0066CC", "#660099") # Colors for the plots
