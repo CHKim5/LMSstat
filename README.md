@@ -19,6 +19,8 @@ The package includes
 
 * PCA
 
+* PCoA
+
 ## Instructions
 
 ### Installation
@@ -281,3 +283,25 @@ PCA(Data,components = c(1,2),legend_position = "none")
 * names = F # used to indicate sample names
 * dotsize = 3 # dotsize
 * labsize = 3 # label size
+* ellipse = T # T  or F to show ellipse
+#### PCoA
+```
+# Makes a subdirectory and saves PCoA plot
+PCoA(Data,components = c(1,2),methods = c("bray", "manhattan")
+```
+<p align="center">
+<img src=https://user-images.githubusercontent.com/77651662/127433788-7aa75a05-3559-4bd1-9504-c1234c5905d4.png width="600" height="500">
+</p>
+<p align="center">PCA plot with selected components</p>
+
+##### Adjustable parameters
+* color = c("#FF3300", "#FF6600", "#FFCC00", "#99CC00", "#0066CC", "#660099") # Colors for the plots
+* legend_position = "none" #  "none","left","right","bottom","top"
+* fig_width = NA #figure size 
+* fig_height = NA #figure size
+* components = c(1,2) # selected components
+* names = F # used to indicate sample names
+* dotsize = 3 # dotsize
+* labsize = 3 # label size
+* ellipse = T # T  or F to show ellipse
+* methods = Dissimilarity index c("manhattan", "euclidean", "canberra", "clark", "bray", "kulczynski", "jaccard", "gower", "altGower", "morisita", "horn", "mountford", "raup", "binomial", "chao", "cao", "mahalanobis", "chisq",chord")
