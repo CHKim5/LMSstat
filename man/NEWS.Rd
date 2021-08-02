@@ -1,6 +1,6 @@
 \name{NEWS}
 \alias{NEWS}
-\title{News for Package
+\title{News for Package}
 
 \section{Changes in version 1.0.1,(February 2021)}{
   \itemize{
@@ -55,3 +55,9 @@
   \item PCoA added
   }
 }
+\section{Changes in version 1.0.9,(August 2021)}{
+  \itemize{
+  \item Volcano plot added
+  }
+}
+

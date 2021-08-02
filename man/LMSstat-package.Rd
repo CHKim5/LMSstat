@@ -29,13 +29,15 @@ The package includes
 * PCA
 
 * PCoA
+
+* Volcano
 }
 \details{
 \tabular{ll}{
 Package: \tab LMSstat\cr
 Type: \tab Package\cr
-Version: \tab 1.0.8\cr
-Date: \tab 2021-07-29\cr
+Version: \tab 1.0.9\cr
+Date: \tab 2021-08-02\cr
 License: \tab MIT License\cr
 }
 }
