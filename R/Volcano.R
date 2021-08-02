@@ -15,6 +15,7 @@
 #' @param color colors used for ggplots.color=c("#FF3300","#FF6600","#FFCC00","#99CC00","#0066CC","#660099")
 #' @param fixed_limit whether the limit should be fixed or not T, F
 #' @param max_overlap maximum overlap for labels
+#' @param FC_range significant fold change range
 #'
 #' @return Volcano Plot
 #' @export
@@ -36,6 +37,7 @@ Volcano<-function(data,
                   y_limit = c(-2,6),
                   pval_intercept = 0.05,
                   max_overlap = 20,
+                  FC_range = c(-1.5,1.5),
                   sig_label = T,
                   color = c("blue","black", "red")){
   ifelse(!dir.exists(file.path(getwd(), "Volcano")), dir.create(file.path(getwd(), "Volcano")), FALSE)
@@ -120,8 +122,8 @@ Volcano<-function(data,
     Volc_Dat<-as.data.frame(Volc_Dat)
     colnames(Volc_Dat)<-c("log2FoldChange","pvalue","Direction")
     Volc_Dat$Direction <- "Not Significant"
-    Volc_Dat$Direction[Volc_Dat$log2FoldChange > 0 & Volc_Dat$pvalue < pval_intercept] <- "UP"
-    Volc_Dat$Direction[Volc_Dat$log2FoldChange < 0 & Volc_Dat$pvalue < pval_intercept] <- "DOWN"
+    Volc_Dat$Direction[Volc_Dat$log2FoldChange > FC_range[2] & Volc_Dat$pvalue < pval_intercept] <- "UP"
+    Volc_Dat$Direction[Volc_Dat$log2FoldChange < FC_range[1] & Volc_Dat$pvalue < pval_intercept] <- "DOWN"
     KK<-Volc_Dat %>% dplyr::filter(Direction!="Not Significant")
     sem_res<-ggplot2::ggplot(data=Volc_Dat, ggplot2::aes(x=log2FoldChange, y=-log(pvalue,base = pval_log), col=Direction)) +
       ggplot2::geom_point(size= dotsize) +
@@ -143,6 +145,8 @@ Volcano<-function(data,
                                                axis.text.y=ggplot2::element_text(size=10))+
       ggplot2::scale_color_manual(values=color[c("DOWN","Not Significant","UP")%in% unique(Volc_Dat$Direction)]) +
       ggplot2::geom_vline(xintercept=c(0), col=c("black")) +
+      ggplot2::geom_vline(xintercept=FC_range[1],linetype = 'dashed', col=c("grey"))+
+      ggplot2::geom_vline(xintercept=FC_range[2],linetype = 'dashed', col=c("grey"))+
       ggplot2::geom_hline(yintercept=-log(pval_intercept,base = pval_log), col="black")
     {if(fixed_limit ==T){
       sem_res<-sem_res+ggplot2::xlim(x_limit[1], x_limit[2])+
