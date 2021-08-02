@@ -207,6 +207,7 @@ Volcano(Test,asterisk = "t-test")
 * color=c("#FF3300","#FF6600","#FFCC00") #colors used for ggplots.
 * fixed_limit = F #whether the limit should be fixed or not T, F
 * max_overlap = 20 #maximum overlap for labels
+* FC_range = c(-1.5,1.5) #significant fold change range
 
 ### Heatmap
 
