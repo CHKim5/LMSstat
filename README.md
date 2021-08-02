@@ -11,6 +11,8 @@ The package includes
 
 * Normality check (Shapiro Wilk test)
 
+* Volcano plot
+
 * Heatmap
 
 * PERMANOVA
@@ -176,11 +178,38 @@ write.csv(Result,"Normality_test_Result.csv")
 <img src="https://user-images.githubusercontent.com/77651662/126578553-f2d583db-d649-4db7-92bb-8cfa9433904a.PNG" width="400" height="350">
 </p>
 
+### Volcano plot
+
+```
+# Makes a subdirectory and saves Volcano plots for different combination of groups
+Test<-Allstats(Data)
+Volcano(Test,asterisk = "t-test")
+```
+<p align="center">
+<img src="https://user-images.githubusercontent.com/77651662/127811109-0cb273ba-3c01-4679-9cb3-c510f3176592.png" width="400" height="400">
+<img src="https://user-images.githubusercontent.com/77651662/127811667-980ee12e-ec12-4786-98b9-22b4c027f5c1.png" width="400" height="400">
+</p>
 
 
+##### Adjustable parameters
+
+* asterisk = "t-test" #statistics inheriting from Allstats "Scheffe", "t-test", "u-test", "Dunn"
+* reverse = T # T, F reverse the direction of fold change
+* fig_width = NA #figure size 
+* fig_height = NA #figure size
+* FC_log = 2 # Fold change log transformation value
+* pval_log = 10 #p_value log transformation value 
+* dotsize = 3 #dotsize
+* x_limit = c(-2,2) #x axis limt 
+* y_limit =c(0,6) #y axis limit 
+* pval_intercept = 0.05 # intercept for identification 
+* sig_label = T # T,F label significant variables
+* color=c("#FF3300","#FF6600","#FFCC00") colors used for ggplots.
 ### Heatmap
 
 ```
+# Makes a subdirectory and saves Heatmap
+
 scaled_data<-D_tran(Data,param = "Auto")
 
 AS_heatmap(scaled_data) #data inheriting from D_tran
