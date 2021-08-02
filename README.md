@@ -204,7 +204,10 @@ Volcano(Test,asterisk = "t-test")
 * y_limit =c(0,6) #y axis limit 
 * pval_intercept = 0.05 # intercept for identification 
 * sig_label = T # T,F label significant variables
-* color=c("#FF3300","#FF6600","#FFCC00") colors used for ggplots.
+* color=c("#FF3300","#FF6600","#FFCC00") #colors used for ggplots.
+* fixed_limit = F #whether the limit should be fixed or not T, F
+* max_overlap = 20 #maximum overlap for labels
+
 ### Heatmap
 
 ```
