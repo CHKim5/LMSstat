@@ -187,7 +187,7 @@ Volcano(Test,asterisk = "t-test")
 ```
 <p align="center">
 <img src="https://user-images.githubusercontent.com/77651662/127811109-0cb273ba-3c01-4679-9cb3-c510f3176592.png" width="400" height="400">
-<img src="https://user-images.githubusercontent.com/77651662/127811667-980ee12e-ec12-4786-98b9-22b4c027f5c1.png" width="400" height="400">
+<img src="https://user-images.githubusercontent.com/77651662/127816379-409d8630-eaf2-45aa-8d77-7540e5542ebd.png" width="400" height="400">
 </p>
 
 
