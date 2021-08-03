@@ -13,7 +13,6 @@
 #'
 Allstats<-function (Data, Adjust_p_value = T, Adjust_method = "BH")
 {
-
   LETTERS702 <- c(sapply(LETTERS, function(x) paste0(x, LETTERS)))
   LETTERS37232 <- c(LETTERS, LETTERS702, sapply(LETTERS, function(x) paste0(x,
                                                                             LETTERS702)))
@@ -50,14 +49,22 @@ Allstats<-function (Data, Adjust_p_value = T, Adjust_method = "BH")
           }
           else {
             for (met in 1:(ncol(Data) - 2)) {
+              Out<-tryCatch(
+                {
+                  t.test(x = (eval(parse(text = paste("Data",
+                                                      unique(Data$Group)[Gnum_1], sep = "_")))[,
+                                                                                               eval(parse(text = "LETTERS210729[met]"))]),
+                         y = (eval(parse(text = paste("Data",
+                                                      unique(Data$Group)[Gnum_2], sep = "_")))[,
+                                                                                               eval(parse(text = "LETTERS210729[met]"))]))[["p.value"]]
+                },
+                error=function(cond) {
+                  return(1)
+                }
+              )
               assign(paste(as.character(LETTERS210729[met]),
                            unique(Data$Group)[Gnum_1], unique(Data$Group)[Gnum_2],
-                           "T_test", sep = "_"), t.test(x = (eval(parse(text = paste("Data",
-                                                                                     unique(Data$Group)[Gnum_1], sep = "_")))[,
-                                                                                                                              eval(parse(text = "LETTERS210729[met]"))]),
-                                                        y = (eval(parse(text = paste("Data",
-                                                                                     unique(Data$Group)[Gnum_2], sep = "_")))[,
-                                                                                                                              eval(parse(text = "LETTERS210729[met]"))]))[["p.value"]])
+                           "T_test", sep = "_"), Out)
             }
           }
         }
@@ -87,14 +94,22 @@ Allstats<-function (Data, Adjust_p_value = T, Adjust_method = "BH")
           }
           else {
             for (met in 1:(ncol(Data) - 2)) {
+              Out<-tryCatch(
+                {
+                  wilcox.test(x = (eval(parse(text = paste("Data",
+                                                           unique(Data$Group)[Gnum_1], sep = "_")))[,
+                                                                                                    eval(parse(text = "LETTERS210729[met]"))]),
+                              y = (eval(parse(text = paste("Data",
+                                                           unique(Data$Group)[Gnum_2], sep = "_")))[,
+                                                                                                    eval(parse(text = "LETTERS210729[met]"))]))[["p.value"]]
+                },
+                error=function(cond) {
+                  return(1)
+                }
+              )
               assign(paste(as.character(LETTERS210729[met]),
                            unique(Data$Group)[Gnum_1], unique(Data$Group)[Gnum_2],
-                           "U_test", sep = "_"), wilcox.test(x = (eval(parse(text = paste("Data",
-                                                                                          unique(Data$Group)[Gnum_1], sep = "_")))[,
-                                                                                                                                   eval(parse(text = "LETTERS210729[met]"))]),
-                                                             y = (eval(parse(text = paste("Data",
-                                                                                          unique(Data$Group)[Gnum_2], sep = "_")))[,
-                                                                                                                                   eval(parse(text = "LETTERS210729[met]"))]))[["p.value"]])
+                           "U_test", sep = "_"), Out)
             }
           }
         }
@@ -181,14 +196,22 @@ Allstats<-function (Data, Adjust_p_value = T, Adjust_method = "BH")
           }
           else {
             for (met in 1:(ncol(Data) - 2)) {
+              Out<-tryCatch(
+                {
+                  t.test(x = (eval(parse(text = paste("Data",
+                                                      unique(Data$Group)[Gnum_1], sep = "_")))[,
+                                                                                               eval(parse(text = "LETTERS210729[met]"))]),
+                         y = (eval(parse(text = paste("Data",
+                                                      unique(Data$Group)[Gnum_2], sep = "_")))[,
+                                                                                               eval(parse(text = "LETTERS210729[met]"))]))[["p.value"]]
+                },
+                error=function(cond) {
+                  return(1)
+                }
+              )
               assign(paste(as.character(LETTERS210729[met]),
                            unique(Data$Group)[Gnum_1], unique(Data$Group)[Gnum_2],
-                           "T_test", sep = "_"), t.test(x = (eval(parse(text = paste("Data",
-                                                                                     unique(Data$Group)[Gnum_1], sep = "_")))[,
-                                                                                                                              eval(parse(text = "LETTERS210729[met]"))]),
-                                                        y = (eval(parse(text = paste("Data",
-                                                                                     unique(Data$Group)[Gnum_2], sep = "_")))[,
-                                                                                                                              eval(parse(text = "LETTERS210729[met]"))]))[["p.value"]])
+                           "T_test", sep = "_"), Out)
             }
           }
         }
@@ -218,14 +241,22 @@ Allstats<-function (Data, Adjust_p_value = T, Adjust_method = "BH")
           }
           else {
             for (met in 1:(ncol(Data) - 2)) {
+              Out<-tryCatch(
+                {
+                  wilcox.test(x = (eval(parse(text = paste("Data",
+                                                           unique(Data$Group)[Gnum_1], sep = "_")))[,
+                                                                                                    eval(parse(text = "LETTERS210729[met]"))]),
+                              y = (eval(parse(text = paste("Data",
+                                                           unique(Data$Group)[Gnum_2], sep = "_")))[,
+                                                                                                    eval(parse(text = "LETTERS210729[met]"))]))[["p.value"]]
+                },
+                error=function(cond) {
+                  return(1)
+                }
+              )
               assign(paste(as.character(LETTERS210729[met]),
                            unique(Data$Group)[Gnum_1], unique(Data$Group)[Gnum_2],
-                           "U_test", sep = "_"), wilcox.test(x = (eval(parse(text = paste("Data",
-                                                                                          unique(Data$Group)[Gnum_1], sep = "_")))[,
-                                                                                                                                   eval(parse(text = "LETTERS210729[met]"))]),
-                                                             y = (eval(parse(text = paste("Data",
-                                                                                          unique(Data$Group)[Gnum_2], sep = "_")))[,
-                                                                                                                                   eval(parse(text = "LETTERS210729[met]"))]))[["p.value"]])
+                           "U_test", sep = "_"),Out)
             }
           }
         }
@@ -249,10 +280,17 @@ Allstats<-function (Data, Adjust_p_value = T, Adjust_method = "BH")
       }
       print("U-test has finished")
       for (met in 1:(ncol(Data) - 2)) {
-        Ano_In <- aov(eval(parse(text = LETTERS210729[met])) ~
-                        Group, data = Data_final)
+        Out<-tryCatch(
+          {
+            Ano_In <- aov(eval(parse(text = LETTERS210729[met])) ~
+                            Group, data = Data_final)
+            summary(Ano_In)[[1]][["Pr(>F)"]][1]    },
+          error=function(cond) {
+            return(1)
+          }
+        )
         assign(paste(as.character(LETTERS210729[met]),
-                     "Anova", sep = "_"), summary(Ano_In)[[1]][["Pr(>F)"]][1])
+                     "Anova", sep = "_"), Out)
       }
       if (is.na(Result[1, Rounder]) == T) {
         for (met_1 in 1:(ncol(Data_final) - 2)) {
@@ -285,10 +323,17 @@ Allstats<-function (Data, Adjust_p_value = T, Adjust_method = "BH")
       }
       print("Anova & PostHoc has finished")
       for (met in 1:(ncol(Data) - 2)) {
-        Kru_In <- kruskal.test(eval(parse(text = LETTERS210729[met])) ~
-                                 Group, data = Data_final)
+        Out<-tryCatch(
+          {
+            Kru_In <- kruskal.test(eval(parse(text = LETTERS210729[met])) ~
+                                     Group, data = Data_final)
+            Kru_In[["p.value"]]},
+          error=function(cond) {
+            return(1)
+          }
+        )
         assign(paste(as.character(LETTERS210729[met]),
-                     "Kruskal_Wallis", sep = "_"), Kru_In[["p.value"]])
+                     "Kruskal_Wallis", sep = "_"), Out)
       }
       if (is.na(Result[1, Rounder]) == T) {
         for (met_1 in 1:(ncol(Data_final) - 2)) {
