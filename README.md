@@ -175,6 +175,8 @@ scaled_data<-D_tran(Data,param = "Auto")
 ### Normality check
 
 ```
+#Shapiro Wilk test
+
 Result<-Norm_test(Data)
 
 write.csv(Result,"Normality_test_Result.csv")
