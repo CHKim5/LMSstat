@@ -11,6 +11,8 @@ The package includes
 
 * Normality check (Shapiro Wilk test)
 
+* Scheirer–Ray–Hare Test
+
 * Volcano plot
 
 * Heatmap
@@ -49,7 +51,9 @@ library(LMSstat)
 #### Used in
 
 * Simple statistics
-* Barplot, Boxplot, Dotplot  
+* Barplot, Boxplot, Dotplot
+* Volcano plot
+* Scheirer–Ray–Hare Test  
 * PERMANOVA
 * NMDS
 * PCA
@@ -105,9 +109,10 @@ Classification<-read.csv("statT_G.csv",header = F)
 ```
 Statfile<-Allstats(Data,Adjust_p_value = T, Adjust_method = "BH")
 ```
-
 ##### Adjustable parameters
+
 * Adjust_p_value = T # Set True if adjustment is needed
+
 * Adjust_method = F # Adjustment methods frequently used. c("holm", "hochberg", "hommel", "bonferroni", "BH", "BY","fdr", "none")
 
 ```
@@ -177,6 +182,22 @@ write.csv(Result,"Normality_test_Result.csv")
 <p align="center">
 <img src="https://user-images.githubusercontent.com/77651662/126578553-f2d583db-d649-4db7-92bb-8cfa9433904a.PNG" width="400" height="350">
 </p>
+
+### Scheirer–Ray–Hare Test
+
+```
+# csv files including significant variables (Multilevel, Group, interaction) and a Venn diagram are downloaded
+SRH(Data)
+```
+<p align="center">
+<img src="https://user-images.githubusercontent.com/77651662/130378279-fb49da48-dc7b-418e-88e7-db046364a4cc.PNG" width="400" height="350">
+</p>
+
+##### Adjustable parameters
+
+* Adjust_p_value = T # Set True if adjustment is needed
+* Adjust_method = "BH" # Adjustment methods frequently used. c("holm", "hochberg", "hommel", "bonferroni", "BH", "BY","fdr", "none")
+
 
 ### Volcano plot
 
