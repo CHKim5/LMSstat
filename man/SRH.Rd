@@ -2,7 +2,7 @@
 % Please edit documentation in R/SRH.R
 \name{SRH}
 \alias{SRH}
-\title{Computes Scheirer???Ray???Hare Test}
+\title{Computes Scheirer-Ray-Hare Test}
 \usage{
 SRH(data, Adjust_p_value = T, Adjust_method = "BH")
 }
@@ -17,7 +17,7 @@ SRH(data, Adjust_p_value = T, Adjust_method = "BH")
 csv files including significant variables (Multilevel, Group, interaction) and a Venn diagram
 }
 \description{
-Computes Scheirer???Ray???Hare Test
+Computes Scheirer-Ray-Hare Test
 }
 \examples{
 data(Data)

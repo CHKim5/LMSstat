@@ -1,4 +1,4 @@
-#' Computes Scheirer???Ray???Hare Test
+#' Computes Scheirer-Ray-Hare Test
 #'
 #' @param data csv file with Header as False First column with Sample Second column with Multilevel(Mixomics) so that it can be compatible with other multivariate statistics Third column with Group information. Rest of the columns are the metabolites to be tested.
 #' @param Adjust_p_value Set True if FDR adjustments are to be made. If not set False
@@ -52,6 +52,11 @@ SRH<-function(data,Adjust_p_value = T,Adjust_method = "BH"){
   ML_sig<-df %>% dplyr::filter(Multilevel<0.05)
   G_sig<-df %>% dplyr::filter(Group<0.05)
   Int_sig<-df %>% dplyr::filter(Interaction<0.05)
+  Result<-list()
+  Result[["Multilevel"]]<-ML_sig
+  Result[["Group"]]<-G_sig
+  Result[["Interaction"]]<-Int_sig
+  Result[["Result"]]<-df
   print("Started to print Venn_diagram")
   VennDiagram::venn.diagram(list(rownames(ML_sig),rownames(G_sig),rownames(Int_sig)),
                             category.names = c("Multilevel","Group","Interaction"),
@@ -68,6 +73,7 @@ SRH<-function(data,Adjust_p_value = T,Adjust_method = "BH"){
                             cat.pos = c(-27, 27, 135),
                             cat.dist = c(0.055, 0.055, 0.085) )
   print("Finished printing Venn_diagram")
+  Result
   write.csv(G_sig,"Significant for variable_Group.csv")
   write.csv(ML_sig,"Significant for variable_Multilevel.csv")
   write.csv(Int_sig,"Significant for variable_Interaction.csv")
