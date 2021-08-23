@@ -60,4 +60,8 @@
   \item Volcano plot added
   }
 }
-
+\section{Changes in version 1.0.10,(August 2021)}{
+  \itemize{
+  \item Two factor analysis added
+  }
+}

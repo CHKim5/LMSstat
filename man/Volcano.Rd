@@ -13,9 +13,12 @@ Volcano(
   pval_log = 10,
   fig_height = NA,
   dotsize = 2,
+  fixed_limit = F,
   x_limit = c(-15, 15),
   y_limit = c(-2, 6),
   pval_intercept = 0.05,
+  max_overlap = 20,
+  FC_range = c(-1.5, 1.5),
   sig_label = T,
   color = c("blue", "black", "red")
 )
@@ -23,7 +26,7 @@ Volcano(
 \arguments{
 \item{data}{data inheriting from Allstats}
 
-\item{asterisk}{statistics inheriting from Allstats # "t-test", "u-test", "Scheffe", "Dunn"}
+\item{asterisk}{statistics inheriting from Allstats  # "t-test", "u-test", "Scheffe", "Dunn"}
 
 \item{reverse}{reverse the direction of fold change}
 
@@ -37,11 +40,17 @@ Volcano(
 
 \item{dotsize}{dotsize}
 
+\item{fixed_limit}{whether the limit should be fixed or not T, F}
+
 \item{x_limit}{x axis limt c( -3,3)}
 
 \item{y_limit}{y axis limit c(0, 100)}
 
 \item{pval_intercept}{intercept for identification 0.05}
+
+\item{max_overlap}{maximum overlap for labels}
+
+\item{FC_range}{significant fold change range}
 
 \item{sig_label}{label significant variables}
 
