@@ -12,6 +12,8 @@
 #' @param size dot size
 #' @param fig_width figure size
 #' @param fig_height figure size
+#' @param Y_text Y axis title size
+#' @param X_text X axis text size
 #'
 #' @return ggdotplot
 #' @export
@@ -30,7 +32,9 @@ AS_dotplot<-function(data,
                      step_increase = 0.05,
                      size = NULL,
                      fig_width = NA,
-                     fig_height = NA){
+                     fig_height = NA,
+                     X_text = 10,
+                     Y_text = 12){
   {#Summary
     ###Plot_data_prep###
     ifelse(!dir.exists(file.path(getwd(), "dotplot")), dir.create(file.path(getwd(), "dotplot")), FALSE)
@@ -125,8 +129,8 @@ AS_dotplot<-function(data,
                                  plot.caption=ggplot2::element_text(size=15),  # caption
                                  axis.title.x=ggplot2::element_text(vjust=10,
                                                            size=15),  # X axis title
-                                 axis.title.y=ggplot2::element_text(size=12),  # Y axis title
-                                 axis.text.x=ggplot2::element_text(size=10,
+                                 axis.title.y=ggplot2::element_text(size=Y_text),  # Y axis title
+                                 axis.text.x=ggplot2::element_text(size=X_text,
                                                           vjust=.5),  # X axis text
                                  axis.text.y=ggplot2::element_text(size=10),
                                  legend.position = legend_position)+
@@ -164,8 +168,8 @@ AS_dotplot<-function(data,
                                                    plot.caption=ggplot2::element_text(size=15),  # caption
                                                    axis.title.x=ggplot2::element_text(vjust=10,
                                                                              size=15),  # X axis title
-                                                   axis.title.y=ggplot2::element_text(size=12),  # Y axis title
-                                                   axis.text.x=ggplot2::element_text(size=10,
+                                                   axis.title.y=ggplot2::element_text(size=Y_text),  # Y axis title
+                                                   axis.text.x=ggplot2::element_text(size=X_text,
                                                                             vjust=.5),  # X axis text
                                                    axis.text.y=ggplot2::element_text(size=10),
                                  legend.position = legend_position)
@@ -243,8 +247,8 @@ AS_dotplot<-function(data,
                                             plot.caption=ggplot2::element_text(size=15),  # caption
                                             axis.title.x=ggplot2::element_text(vjust=10,
                                                                       size=15),  # X axis title
-                                            axis.title.y=ggplot2::element_text(size=12),  # Y axis title
-                                            axis.text.x=ggplot2::element_text(size=10,
+                                            axis.title.y=ggplot2::element_text(size=Y_text),  # Y axis title
+                                            axis.text.x=ggplot2::element_text(size=X_text,
                                                                      vjust=.5),  # X axis text
                                             axis.text.y=ggplot2::element_text(size=10),
                                             legend.position = legend_position)+
@@ -282,8 +286,8 @@ AS_dotplot<-function(data,
                                             plot.caption=ggplot2::element_text(size=15),  # caption
                                             axis.title.x=ggplot2::element_text(vjust=10,
                                                                       size=15),  # X axis title
-                                            axis.title.y=ggplot2::element_text(size=12),  # Y axis title
-                                            axis.text.x=ggplot2::element_text(size=10,
+                                            axis.title.y=ggplot2::element_text(size=Y_text),  # Y axis title
+                                            axis.text.x=ggplot2::element_text(size=X_text,
                                                                      vjust=.5),  # X axis text
                                             axis.text.y=ggplot2::element_text(size=10),
                                             legend.position = legend_position)

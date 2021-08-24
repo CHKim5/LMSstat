@@ -16,7 +16,9 @@ AS_dotplot(
   step_increase = 0.05,
   size = NULL,
   fig_width = NA,
-  fig_height = NA
+  fig_height = NA,
+  X_text = 10,
+  Y_text = 12
 )
 }
 \arguments{
@@ -43,6 +45,10 @@ AS_dotplot(
 \item{fig_width}{figure size}
 
 \item{fig_height}{figure size}
+
+\item{X_text}{X axis text size}
+
+\item{Y_text}{Y axis title size}
 }
 \value{
 ggdotplot
