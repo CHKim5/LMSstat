@@ -154,6 +154,8 @@ AS_barplot(Statfile,asterisk = "Scheffe")
 * width = 0.3 # box width ; size = 3 # dot size
 * fig_width = NA #figure size 
 * fig_height = NA #figure size
+* Y_text = 12 # Y title size
+* X_text = 10 # X text size
 
 ### Scaling & Transformation
 
