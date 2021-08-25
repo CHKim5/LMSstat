@@ -18,7 +18,9 @@ AS_dotplot(
   fig_width = NA,
   fig_height = NA,
   X_text = 10,
-  Y_text = 12
+  Y_text = 12,
+  Y_lab = 10,
+  T_size = 15
 )
 }
 \arguments{
@@ -49,6 +51,10 @@ AS_dotplot(
 \item{X_text}{X axis text size}
 
 \item{Y_text}{Y axis title size}
+
+\item{Y_lab}{y axis text size}
+
+\item{T_size}{Title size}
 }
 \value{
 ggdotplot
