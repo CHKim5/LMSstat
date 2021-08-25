@@ -253,11 +253,14 @@ AS_boxplot<-function(data,
                                             axis.text.x=ggplot2::element_text(size=X_text,
                                                                      vjust=.5),  # X axis text
                                             axis.text.y=ggplot2::element_text(size=Y_lab),
-                                            legend.position = legend_position,
-                                            step.increase = step_increase,
-                                            label.size = label_size,
-                                            tip.length = tip_length)+
-            ggpubr::stat_pvalue_manual(stat.test, y.position = 1.05 * max(data[["Data_renamed"]][,number]), step.increase = 0.1,label = "p.adj.signif",size = 3.5,vjust = 0.05)
+                                            legend.position = legend_position)+
+            ggpubr::stat_pvalue_manual(stat.test, y.position = 1.05 * max(data[["Data_renamed"]][,number]),
+                                       step.increase = step_increase,
+                                       label = "p.adj.signif",
+                                       size = 3.5,
+                                       vjust = 0.05,
+                                       label.size = label_size,
+                                       tip.length = tip_length)
           ggplot2::ggsave(filename = paste(NAMES[number],"boxplot.png",collapse = ""),
                  path=paste0(getwd(),"/boxplot"),
                  width = fig_width,
