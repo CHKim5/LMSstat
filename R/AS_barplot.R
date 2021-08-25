@@ -14,6 +14,8 @@
 #' @param fig_height figure size
 #' @param Y_text Y axis title size
 #' @param X_text X axis text size
+#' @param Y_lab y axis text size
+#' @param T_size Title size
 #'
 #' @return ggbarplot
 #' @export
@@ -35,7 +37,9 @@ AS_barplot<-function(data,
                      fig_width = NA,
                      fig_height = NA,
                      X_text = 10,
-                     Y_text = 12){
+                     Y_text = 12,
+                     Y_lab = 10,
+                     T_size =15){
   {#Summary
     ###Plot_data_prep###
     ifelse(!dir.exists(file.path(getwd(), "barplot")), dir.create(file.path(getwd(), "barplot")), FALSE)
@@ -122,7 +126,7 @@ AS_barplot<-function(data,
           ggplot2::geom_errorbar( ggplot2::aes(x=Group, ymin=len-SEM, ymax=len+SEM), width=0.2, colour="Black", alpha=1, size=0.5)+
           ggplot2::scale_y_continuous(label=ecoflux::scientific_10x)+
           ggplot2::labs(title=NAMES[number],x =NULL, y = "Intensity")+
-          ggplot2::theme_classic()+ ggplot2::theme(plot.title=ggplot2::element_text(size=15,
+          ggplot2::theme_classic()+ ggplot2::theme(plot.title=ggplot2::element_text(size=T_size,
                                                          face="bold",
                                                          color="Black",
                                                          hjust=0.5,
@@ -135,7 +139,7 @@ AS_barplot<-function(data,
                                  axis.title.y=ggplot2::element_text(size=Y_text),  # Y axis title
                                  axis.text.x=ggplot2::element_text(size=X_text,
                                                           vjust=.5),  # X axis text
-                                 axis.text.y=ggplot2::element_text(size=10),
+                                 axis.text.y=ggplot2::element_text(size=Y_lab),
                                  legend.position = legend_position)+
           ggpubr::stat_pvalue_manual(stat.test,
                                      y.position = 1.05 * max(data[["Data_renamed"]][,number]),
@@ -160,7 +164,7 @@ AS_barplot<-function(data,
           ggplot2::geom_errorbar( ggplot2::aes(x=Group, ymin=len-SEM, ymax=len+SEM), width=0.2, colour="Black", alpha=1, size=0.5)+
           ggplot2::scale_y_continuous(label=ecoflux::scientific_10x)+
           ggplot2::labs(title=NAMES[number],x =NULL, y = "Intensity")+
-          ggplot2::theme_classic()+ ggplot2::theme(plot.title=ggplot2::element_text(size=15,
+          ggplot2::theme_classic()+ ggplot2::theme(plot.title=ggplot2::element_text(size=T_size,
                                                                            face="bold",
                                                                            color="Black",
                                                                            hjust=0.5,
@@ -173,7 +177,7 @@ AS_barplot<-function(data,
                                                    axis.title.y=ggplot2::element_text(size=Y_text),  # Y axis title
                                                    axis.text.x=ggplot2::element_text(size=X_text,
                                                                             vjust=.5),  # X axis text
-                                                   axis.text.y=ggplot2::element_text(size=10),
+                                                   axis.text.y=ggplot2::element_text(size=Y_lab),
                                  legend.position = legend_position)
 
         ggplot2::ggsave(filename = paste(NAMES[number],"barplot.jpg",collapse = ""),
@@ -241,7 +245,7 @@ AS_barplot<-function(data,
             ggplot2::geom_errorbar( ggplot2::aes(x=Group, ymin=len-SEM, ymax=len+SEM), width=0.2, colour="Black", alpha=1, size=0.5)+
             ggplot2::scale_y_continuous(label=ecoflux::scientific_10x)+
             ggplot2::labs(title=NAMES[number],x =NULL, y = "Intensity")+
-            ggplot2::theme_classic()+ ggplot2::theme(plot.title=ggplot2::element_text(size=15,
+            ggplot2::theme_classic()+ ggplot2::theme(plot.title=ggplot2::element_text(size=T_size,
                                                                     face="bold",
                                                                     color="Black",
                                                                     hjust=0.5,
@@ -254,7 +258,7 @@ AS_barplot<-function(data,
                                             axis.title.y=ggplot2::element_text(size=Y_text),  # Y axis title
                                             axis.text.x=ggplot2::element_text(size=X_text,
                                                                      vjust=.5),  # X axis text
-                                            axis.text.y=ggplot2::element_text(size=10),
+                                            axis.text.y=ggplot2::element_text(size=Y_lab),
                                             legend.position = legend_position)+
             ggpubr::stat_pvalue_manual(stat.test,
                                        y.position = 1.05 * max(data[["Data_renamed"]][,number]),
@@ -280,7 +284,7 @@ AS_barplot<-function(data,
             ggplot2::geom_errorbar( ggplot2::aes(x=Group, ymin=len-SEM, ymax=len+SEM), width=0.2, colour="Black", alpha=1, size=0.5)+
             ggplot2::scale_y_continuous(label=ecoflux::scientific_10x)+
             ggplot2::labs(title=NAMES[number],x =NULL, y = "Intensity")+
-            ggplot2::theme_classic()+ ggplot2::theme(plot.title=ggplot2::element_text(size=15,
+            ggplot2::theme_classic()+ ggplot2::theme(plot.title=ggplot2::element_text(size=T_size,
                                                            face="bold",
                                                            color="Black",
                                                            hjust=0.5,
@@ -293,7 +297,7 @@ AS_barplot<-function(data,
                                    axis.title.y=ggplot2::element_text(size=Y_text),  # Y axis title
                                    axis.text.x=ggplot2::element_text(size=X_text,
                                                             vjust=.5),  # X axis text
-                                   axis.text.y=ggplot2::element_text(size=10),
+                                   axis.text.y=ggplot2::element_text(size=Y_lab),
                                    legend.position = legend_position)
 
           ggplot2::ggsave(filename = paste(NAMES[number],"barplot.jpg",collapse = ""),
