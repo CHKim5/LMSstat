@@ -16,6 +16,7 @@
 #' @param X_text X axis text size
 #' @param Y_lab y axis text size
 #' @param T_size Title size
+#' @param size outline size
 #'
 #' @return ggboxplot
 #' @export
@@ -33,6 +34,7 @@ AS_boxplot<-function(data,
                      label_size = 2.88,
                      step_increase = 0.05,
                      width = 0.3,
+                     size = 0.5,
                      fig_width = NA,
                      fig_height = NA,
                      X_text = 10,
@@ -118,6 +120,7 @@ AS_boxplot<-function(data,
                           color = "Group",
                           palette = ckey,
                           add = "jitter",
+                          size = size,
                           order = order,
                           width = width)+
           ggplot2::scale_y_continuous(label=ecoflux::scientific_10x)+
@@ -155,6 +158,7 @@ AS_boxplot<-function(data,
                           y = colnames(data[["Data_renamed"]])[number],
                           color = "Group",
                           palette = ckey,
+                          size = size,
                           add = "jitter",
                           order = order,
                           width = width)+
@@ -234,6 +238,7 @@ AS_boxplot<-function(data,
                             y = colnames(data[["Data_renamed"]])[number],
                             color = "Group",
                             palette = ckey,
+                            size = size,
                             add = "jitter",
                             order = order,
                             width = width)+
@@ -254,9 +259,8 @@ AS_boxplot<-function(data,
                                                                      vjust=.5),  # X axis text
                                             axis.text.y=ggplot2::element_text(size=Y_lab),
                                             legend.position = legend_position)+
-            ggpubr::stat_pvalue_manual(stat.test, y.position = 1.05 * max(data[["Data_renamed"]][,number]),
-                                       step.increase = step_increase,
-                                       label = "p.adj.signif",
+            ggpubr::stat_pvalue_manual(stat.test,
+                                       y.position = 1.05 * max(data[["Data_renamed"]][,number]),                                       label = "p.adj.signif",
                                        size = 3.5,
                                        vjust = 0.05,
                                        label.size = label_size,
@@ -271,6 +275,7 @@ AS_boxplot<-function(data,
                             y = colnames(data[["Data_renamed"]])[number],
                             color = "Group",
                             palette = ckey,
+                            size = size,
                             add = "jitter",
                             order = order,
                             width = width)+
