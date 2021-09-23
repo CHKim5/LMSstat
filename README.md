@@ -158,6 +158,7 @@ AS_barplot(Statfile,asterisk = "Scheffe")
 * X_text = 10 # X text size
 * Y_lab = 10 #y axis text size
 * T_size = 15 # Title size
+* sig_int = c(0.1,0.05) # significance interval
 
 ### Scaling & Transformation
 
