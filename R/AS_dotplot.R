@@ -16,6 +16,7 @@
 #' @param X_text X axis text size
 #' @param Y_lab y axis text size
 #' @param T_size Title size
+#' @param sig_int significance parameter
 #'
 #' @return ggdotplot
 #' @export
@@ -38,7 +39,8 @@ AS_dotplot<-function(data,
                      X_text = 10,
                      Y_text = 12,
                      Y_lab = 10,
-                     T_size =15){
+                     T_size =15,
+                     sig_int = c(0.05,0.01)){
   {#Summary
     ###Plot_data_prep###
     ifelse(!dir.exists(file.path(getwd(), "dotplot")), dir.create(file.path(getwd(), "dotplot")), FALSE)
@@ -104,11 +106,9 @@ AS_dotplot<-function(data,
       colnames(stat.test) <- c("group1", "group2",
                                "p")
       stat.test<-stat.test %>% plyr::mutate(
-        p.adj.signif = case_when(
-          p > 0.05                   ~ 'NS',
-          p <= 0.05  &p > 0.01                  ~ '*',
-          p <= 0.01                   ~ '**'
-        )
+        p.adj.signif = case_when(p >
+                                   sig_int[1] ~ "NS", p <= sig_int[1] & p > sig_int[2] ~ "*",
+                                 p <= sig_int[2] ~ "**")
       )
       stat.test<-stat.test[stat.test$p.adj.signif != "NS",]
       if (length(stat.test>4)){
@@ -225,8 +225,8 @@ AS_dotplot<-function(data,
         colnames(stat.test) <- c("group1", "group2",
                                  "p")
         stat.test <- stat.test %>% plyr::mutate(p.adj.signif = case_when(p >
-                                                                           0.05 ~ "NS", p <= 0.05 & p > 0.01 ~ "*",
-                                                                         p <= 0.01 ~ "**"))
+                                                                           sig_int[1] ~ "NS", p <= sig_int[1] & p > sig_int[2] ~ "*",
+                                                                         p <= sig_int[2] ~ "**"))
         stat.test <- stat.test[stat.test$p.adj.signif !=
                                  "NS", ]
         if (length(stat.test>4)){
