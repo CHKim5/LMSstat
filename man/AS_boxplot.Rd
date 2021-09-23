@@ -15,12 +15,14 @@ AS_boxplot(
   label_size = 2.88,
   step_increase = 0.05,
   width = 0.3,
+  size = 0.5,
   fig_width = NA,
   fig_height = NA,
   X_text = 10,
   Y_text = 12,
   Y_lab = 10,
-  T_size = 15
+  T_size = 15,
+  sig_int = c(0.05, 0.01)
 )
 }
 \arguments{
@@ -44,6 +46,8 @@ AS_boxplot(
 
 \item{width}{box width}
 
+\item{size}{outline size}
+
 \item{fig_width}{figure size}
 
 \item{fig_height}{figure size}
@@ -55,6 +59,8 @@ AS_boxplot(
 \item{Y_lab}{y axis text size}
 
 \item{T_size}{Title size}
+
+\item{sig_int}{significance parameter}
 }
 \value{
 ggboxplot

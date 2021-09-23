@@ -20,7 +20,8 @@ AS_barplot(
   X_text = 10,
   Y_text = 12,
   Y_lab = 10,
-  T_size = 15
+  T_size = 15,
+  sig_int = c(0.05, 0.01)
 )
 }
 \arguments{
@@ -55,6 +56,8 @@ AS_barplot(
 \item{Y_lab}{y axis text size}
 
 \item{T_size}{Title size}
+
+\item{sig_int}{significance parameter}
 }
 \value{
 ggbarplot
