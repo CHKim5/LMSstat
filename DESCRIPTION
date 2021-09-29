@@ -36,7 +36,8 @@ Imports:
     ComplexHeatmap,
     ape,
     VennDiagram,
-    rcompanion
+    rcompanion,
+    data.table
 Depends:
     plyr,
     dplyr
