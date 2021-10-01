@@ -507,8 +507,8 @@ Allstats_new<-function (Data, Adjust_p_value = T, Adjust_method = "BH")
     }
 
     rownames(Result) <- colnames(Data)[3:(ncol(Data_final))]
-    colnames(Result) <- c(paste(Names[, 1], "t-test",
-                                sep = "___"), paste(Names[, 1], "u-test",
+    colnames(Result) <- c(paste(Names, "t-test",
+                                sep = "___"), paste(Names, "u-test",
                                                     sep = "___"))
     if (Adjust_p_value == T) {
       print("###########################################")
