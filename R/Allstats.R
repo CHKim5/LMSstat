@@ -472,7 +472,6 @@ Allstats_new<-function (Data, Adjust_p_value = T, Adjust_method = "BH")
   Data_renamed_raw <- apply(Data_renamed_raw, 2, as.numeric)
   Data_final <- cbind(Data[, 1:2], Data_renamed_raw)
   Data_tmp <- as.data.table(Data_final)
-  Data_tmp$Group <- as.factor(Data_tmp$Group)
 
 
 
