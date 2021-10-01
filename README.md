@@ -24,6 +24,9 @@ The package includes
 * PCA
 
 * PCoA
+## Contribution acknowledgement
+Oct.01/2021
+Daehwan Kim: Allstats_new optimization for faster processing; bug fix of Allstats (regarding LETTERS210729) 
 
 ## Instructions
 
