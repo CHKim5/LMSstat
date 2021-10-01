@@ -9,7 +9,7 @@
 #'
 #' @examples data(Data)
 #' Result<-Allstats(Data)
-#'
+#' Result<-Allstats_new(Data) # faster version contributed by Daehwan Kim
 #'
 #'
 Allstats<-function (Data, Adjust_p_value = T, Adjust_method = "BH")
@@ -443,7 +443,6 @@ Allstats<-function (Data, Adjust_p_value = T, Adjust_method = "BH")
   }
 }
 
-####################NEW#####################################################33
 Allstats_new<-function (Data, Adjust_p_value = T, Adjust_method = "BH")
 {
   LETTERS210729 <- apply(as.matrix(1:400000),1, function(x) paste0("V",x))
@@ -457,7 +456,7 @@ Allstats_new<-function (Data, Adjust_p_value = T, Adjust_method = "BH")
   Data_renamed_raw <- Data_renamed[, -c(1, 2)]
   Data_renamed_raw <- apply(Data_renamed_raw, 2, as.numeric)
   Data_final <- cbind(Data[, 1:2], Data_renamed_raw)
-  Data_tmp <- as.data.table(Data_final)
+  Data_tmp <- data.table::as.data.table(Data_final)
 
 
 
@@ -469,7 +468,7 @@ Allstats_new<-function (Data, Adjust_p_value = T, Adjust_method = "BH")
                                           groups_split[[x[2]]][[i]])[["p.value"]]
     res_ttest <- lapply((seq_len(ncol(Data_tmp) - 2) + 2),
                         function(i) as.list(combn(names(groups_split), 2, split_t_test, i = i)))
-    df_ttest <- rbindlist(res_ttest)
+    df_ttest <- data.table::rbindlist(res_ttest)
     Result <- df_ttest
     print("T-test has finished")
 
@@ -478,7 +477,7 @@ Allstats_new<-function (Data, Adjust_p_value = T, Adjust_method = "BH")
                                                groups_split[[x[2]]][[i]])[["p.value"]]
     res_utest <- lapply((seq_len(ncol(Data_tmp) - 2) + 2),
                         function(i) as.list(combn(names(groups_split), 2, split_u_test, i = i)))
-    df_utest <- rbindlist(res_utest)
+    df_utest <- data.table::rbindlist(res_utest)
     Result <- cbind(Result, df_utest)
     print("U-test has finished")
 
@@ -532,7 +531,7 @@ Allstats_new<-function (Data, Adjust_p_value = T, Adjust_method = "BH")
                                           groups_split[[x[2]]][[i]])[["p.value"]]
     res_ttest <- lapply((seq_len(ncol(Data_tmp) - 2) + 2),
                         function(i) as.list(combn(names(groups_split), 2, split_t_test, i = i)))
-    df_ttest <- rbindlist(res_ttest)
+    df_ttest <- data.table::rbindlist(res_ttest)
     Result <- df_ttest
     print("T-test has finished")
 
@@ -541,7 +540,7 @@ Allstats_new<-function (Data, Adjust_p_value = T, Adjust_method = "BH")
                                                groups_split[[x[2]]][[i]])[["p.value"]]
     res_utest <- lapply((seq_len(ncol(Data_tmp) - 2) + 2),
                         function(i) as.list(combn(names(groups_split), 2, split_u_test, i = i)))
-    df_utest <- rbindlist(res_utest)
+    df_utest <- data.table::rbindlist(res_utest)
     Result <- cbind(Result, df_utest)
     print("U-test has finished")
 
@@ -551,7 +550,7 @@ Allstats_new<-function (Data, Adjust_p_value = T, Adjust_method = "BH")
     names(res_anova) <- format(formula_anova)
     p_anova <- unlist(lapply(res_anova, function(x) x[[1]]$"Pr(>F)"[1]))
 
-    df_anova <- data.table(p_anova)
+    df_anova <- data.table::data.table(p_anova)
     Result <- cbind(Result, df_anova)
 
     anovapost_name <- lapply(colnames(Data_tmp)[3:ncol(Data_tmp)], function(x) as.formula(paste0(x, " ~ Group")))
@@ -571,7 +570,7 @@ Allstats_new<-function (Data, Adjust_p_value = T, Adjust_method = "BH")
     names(res_kw) <- format(formula_kw)
     p_kw <- unlist(res_kw)
 
-    df_kw <- data.table(p_kw)
+    df_kw <- data.table::data.table(p_kw)
     Result <- cbind(Result, df_kw)
 
     kwpost_name <- lapply(colnames(Data_tmp)[3:ncol(Data_tmp)], function(x) as.formula(paste0(x, " ~ Group")))
@@ -579,7 +578,7 @@ Allstats_new<-function (Data, Adjust_p_value = T, Adjust_method = "BH")
     names(res_kwpost) <- format(kwpost_name)
     post_kw <- lapply(res_kwpost, function(x) x[["res"]][["P.adj"]])
 
-    df_kw_post <- t(data.table(data.frame(post_kw)))
+    df_kw_post <- t(data.table::data.table(data.frame(post_kw)))
     Result <- cbind(Result, df_kw_post)
 
     print("Kruskal Wallis & PostHoc has finished")
@@ -655,3 +654,4 @@ Allstats_new<-function (Data, Adjust_p_value = T, Adjust_method = "BH")
     Final
   }
 }
+

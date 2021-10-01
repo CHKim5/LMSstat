@@ -22,6 +22,7 @@ Automatically processes T-test, U-test, Anova, Scheffe(Anova Post-Hoc), Krukal W
 \examples{
 data(Data)
 Result<-Allstats(Data)
+Result<-Allstats_new(Data) # faster version contributed by Daehwan Kim
 
 
 }
