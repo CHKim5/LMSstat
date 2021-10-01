@@ -107,7 +107,9 @@ Classification<-read.csv("statT_G.csv",header = F)
 ### Univariate statistics
 
 ```
-Statfile<-Allstats(Data,Adjust_p_value = T, Adjust_method = "BH")
+Statfile<-Allstats_new(Data,Adjust_p_value = T, Adjust_method = "BH") # Optimized code using lapply / data.table for faster processing contributed by Daehwan Kim
+
+Statfile<-Allstats(Data,Adjust_p_value = T, Adjust_method = "BH") # Previous version using for-loop
 ```
 ##### Adjustable parameters
 
