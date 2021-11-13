@@ -5,7 +5,7 @@ The package includes
 
 * Simple Statistics :u-test, t-test, post hocs of Anova and Kruskal Wallis with FDR adjusted values
 
-* Bar, Box, Dot plots with significance (u-test, t-test, post hocs of Anova and Kruskal Wallis)
+* Bar, Box, Dot, Violin plots with significance (u-test, t-test, post hocs of Anova and Kruskal Wallis)
 
 * Scaling & Transformation
 
@@ -131,22 +131,30 @@ write.csv(Statfile[["Result"]],"p_value_result.csv")  # Write csv with all the p
 ### Plots
 
 ```
-# Makes a subdirectory and saves boxplots for all the variables
+# Makes a subdirectory and saves box plots for all the variables
 AS_boxplot(Statfile,asterisk = "u_test") 
 
-# Makes a subdirectory and saves dotplots for all the variables
+# Makes a subdirectory and saves dot plots for all the variables
 AS_dotplot(Statfile,asterisk = "t_test") 
 
-# Makes a subdirectory and saves barplots for all the variables
-AS_barplot(Statfile,asterisk = "Scheffe") 
+# Makes a subdirectory and saves bar plots for all the variables
+AS_barplot(Statfile,asterisk = "Scheffe")
+
+# Makes a subdirectory and saves violin plots for all the variables
+AS_violinplot(Statfile,asterisk = "Scheffe")
 ```
 
 
-&emsp;&emsp;&emsp;&emsp;&emsp;**AS_boxplot(Statfile)**&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**AS_dotplot(Statfile)**&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**AS_barplot(Statfile)**
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**AS_boxplot(Statfile)**&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**AS_dotplot(Statfile)**
 <p align="center">
-<img src="https://user-images.githubusercontent.com/77651662/125714687-1908d6eb-b2bd-4e25-8ef0-62c24466c32a.png" width="225" height="250">
-<img src="https://user-images.githubusercontent.com/77651662/125714704-d7dab67e-03c0-4e35-b86a-36723f7c63de.png" width="225" height="250">
+<img src="https://user-images.githubusercontent.com/77651662/125714687-1908d6eb-b2bd-4e25-8ef0-62c24466c32a.png" width="350" height="250">
+<img src="https://user-images.githubusercontent.com/77651662/125714704-d7dab67e-03c0-4e35-b86a-36723f7c63de.png" width="350" height="250">
+</p>
+
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**AS_barplot(Statfile)**&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**AS_violinplot(Statfile)**
+<p align="center">
 <img src="https://user-images.githubusercontent.com/77651662/125715925-0878ec77-30bf-4859-8e56-316d98b6d520.jpg" width="350" height="250">
+<img src="https://user-images.githubusercontent.com/77651662/141611647-1bc0f049-fcd1-4cb4-a713-5aa30f24dcb1.png" width="350" height="250">
 </p>
 
 ##### Adjustable parameters
